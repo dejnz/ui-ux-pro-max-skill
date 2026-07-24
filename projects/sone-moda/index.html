@@ -1,0 +1,4251 @@
+<!DOCTYPE html>
+<html lang="tr" style="height:100%;overflow:hidden;" class="no-nav-transition"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bileceli Bridal | Lüks Gelinlik & Haute Couture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400;500;600&family=Lato:wght@300;400;700&family=Manrope:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<style type="text/tailwindcss">
+  :root {
+    --primary: #D4AF37;
+    --secondary: #1C1C1E;
+    --bg: #FAFAF9;
+    --surface: #FFFFFF;
+    --border-color: #E5E5E5;
+    --nav-h: 68px; /* navbar yüksekliği — JS ile güncellenir */
+  }
+  html {
+    overflow: hidden;
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--bg);
+    color: var(--secondary);
+    height: 100%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  /* ═══ SAYFA YÜKLENİYOR — tam ekran flash önleyici ═══ */
+  #page-loader {
+    position: fixed;
+    inset: 0;
+    background: #FAFAF9;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity;
+  }
+  #page-loader.loaded {
+    opacity: 0;
+    pointer-events: none;
+  }
+  /* ═══ SAYFA LOADER — ilk flash önleyici ═══ */
+  #page-loader {
+    position: fixed;
+    inset: 0;
+    background: #FAFAF9;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity;
+  }
+  #page-loader.loaded {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .loader-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.42em;
+    color: rgba(28,28,30,0.35);
+    text-transform: uppercase;
+    animation: loader-pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes loader-pulse {
+    0%, 100% { opacity: 0.35; }
+    50%       { opacity: 0.7; }
+  }
+
+  /* İlk yükleme flash'ını önle — JS kaldırır */
+  html.no-nav-transition header#main-nav,
+  html.no-nav-transition header#main-nav::before,
+  html.no-nav-transition header#main-nav *,
+  html.no-nav-transition .swiper-pagination-bullet {
+    transition: none !important;
+  }
+
+  /* Swiper handles page transitions */
+  .page-swiper {
+    height: 100dvh;
+    width: 100%;
+  }
+  .page-swiper .swiper-slide {
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+  }
+  /* Hero and koleksiyon slides: no internal scroll needed */
+  .page-swiper .swiper-slide.slide-fullscreen {
+    overflow: hidden;
+  }
+  h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Playfair Display', serif; }
+  .font-logo { font-family: 'Cinzel', serif; }
+  .container-custom { @apply max-w-[1440px] mx-auto px-6 md:px-12; }
+
+  .btn-primary {
+    @apply border border-white text-white bg-transparent px-8 py-4 uppercase tracking-[0.2em] text-[11px] font-semibold transition-all duration-500 hover:bg-white/10 hover:tracking-[0.25em] active:scale-95;
+  }
+  .btn-gold-outline {
+    @apply border border-[#D4AF37] text-[#D4AF37] bg-transparent px-8 py-4 uppercase tracking-[0.2em] text-[11px] font-semibold transition-all duration-500 hover:bg-[#D4AF37]/5 hover:tracking-[0.25em] active:scale-95;
+  }
+  .btn-dark-outline {
+    @apply border border-[var(--secondary)] text-[var(--secondary)] bg-transparent px-8 py-4 uppercase tracking-[0.2em] text-[11px] font-semibold transition-all duration-300 hover:bg-[var(--secondary)] hover:text-white active:transform active:scale-95;
+  }
+
+  @keyframes marquee { 0% { transform: translateX(100%);} 100% { transform: translateX(-100%);} }
+  .animate-marquee { display:inline-block; white-space:nowrap; animation: marquee 35s linear infinite; }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes fade-in-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-fade-in { animation: fade-in .9s ease both; }
+  .animate-fade-in-up { animation: fade-in-up .9s ease both; }
+  .delay-100 { animation-delay: .1s; }
+  .delay-200 { animation-delay: .2s; }
+  .delay-300 { animation-delay: .3s; }
+
+  .video-container { position:absolute; inset:0; overflow:hidden; z-index:-1; }
+
+  /* ── LOGO ALT YAZI — CSS ile sabit hizalama, zoom'dan etkilenmez ── */
+  #logo-baran, #m-logo-baran {
+    /* BARAN'ın N harfi = SONE'nin E harfinin sağ kenarına hizalı
+       Cinzel font karakterleri yaklaşık eşit genişlik.
+       SONE = 4 karakter @ tracking:0.1em → yaklaşık 4 * 1ch + 3*0.1em
+       Bu değer font yüklendikten sonra stabil kalır */
+    margin-left: 0;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+  }
+  #logo-bileceli, #m-logo-bileceli {
+    margin-left: 0;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+  }
+  /* Transform sıfırla — artık JS transform uygulamıyor */
+  #logo-baran[style*="transform"],
+  #logo-bileceli[style*="transform"],
+  #m-logo-baran[style*="transform"],
+  #m-logo-bileceli[style*="transform"] {
+    transform: none !important;
+  }
+
+  .video-container iframe {
+    width:100vw; height:56.25vw;
+    min-height:100vh; min-width:177.77vh;
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+  }
+
+  /* ══════════════════════════════════════════════
+     NAVBAR — saydam başlar, top:0'dan başlar
+  ══════════════════════════════════════════════ */
+  header#main-nav {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 50;
+    isolation: isolate;
+    transition:
+      box-shadow 0.4s ease;
+    will-change: auto;
+  }
+  header#main-nav .nav-inner {
+    padding-top: 1.1rem; padding-bottom: 1.1rem;
+  }
+
+  /* Arka plan katmanı — her zaman mevcut, sadece opacity değişir */
+  header#main-nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0);
+    backdrop-filter: blur(0px) saturate(1);
+    -webkit-backdrop-filter: blur(0px) saturate(1);
+    transition:
+      background 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      backdrop-filter 0.45s ease,
+      -webkit-backdrop-filter 0.45s ease;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Navbar linkleri ve logo sürükleme ile seçilemesin */
+  header#main-nav a,
+  header#main-nav img,
+  header#main-nav span,
+  header#main-nav button {
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* İkinci scroll eşiği — navbar beyazlaşır */
+  body.scrolled header#main-nav {
+    box-shadow: 0 1px 0 rgba(0,0,0,0.07), 0 8px 32px rgba(0,0,0,0.06);
+    transition: box-shadow 0.45s ease !important;
+  }
+  /* Gelinlerimiz slide'ında navbar gizlenirken shadow sıfırla */
+  body.on-gelinlerimiz header#main-nav,
+  body.on-gelinlerimiz.scrolled header#main-nav {
+    box-shadow: none !important;
+    transition: opacity 0.7s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0s !important;
+  }
+  /* pagination transition */
+  .swiper-pagination-bullet { transition: background 0.6s ease, transform 0.4s ease !important; }
+  /* Sections have smooth fade-in-up on scroll */
+  .scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Minimal parallax — smooth transitions */
+  section > div.absolute,
+  section > div.relative {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Swiper geçişi sırasında navbar rengi değişmez */
+  header#main-nav.nav-transitioning::before {
+    transition:
+      background 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      backdrop-filter 0.6s ease,
+      -webkit-backdrop-filter 0.6s ease !important;
+  }
+  header#main-nav.nav-transitioning .logo-subtext {
+    transition: none !important;
+  }
+
+  body.scrolled:not(.on-collection):not(.on-hakkimizda):not(.on-randevu):not(.on-surec) header#main-nav::before {
+    background: rgba(255,255,255,0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  /* Koleksiyon slide navbar — v10 style bloğunda tanımlanıyor */
+
+  /* HOVER — sadece hero dışında beyazlaşır */
+  body:not(.on-hero) header#main-nav.nav-hovered::before {
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(24px) saturate(1.5);
+    -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  }
+  /* Hero'da hover → saydam arka plan, yazılar beyaz kalır */
+  body.on-hero header#main-nav.nav-hovered::before {
+    background: rgba(255,255,255,0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+
+  /* Hover durumu renk geçişleri — hero dışında koyuya döner */
+  header#main-nav .nav-item,
+  header#main-nav .logo-text,
+  header#main-nav .logo-divider,
+  header#main-nav .logo-subtext,
+  header#main-nav .menu-btn {
+    transition: color 0.45s ease, opacity 0.45s ease, text-shadow 0.45s ease !important;
+  }
+
+  /* Hero dışında hover → koyu renkler */
+  body:not(.on-hero) header#main-nav.nav-hovered .nav-item { color: #1C1C1E !important; }
+  body:not(.on-hero) header#main-nav.nav-hovered .logo-text { color: #1C1C1E !important; }
+  body:not(.on-hero) header#main-nav.nav-hovered .logo-divider { color: #D5D5D5 !important; }
+  body:not(.on-hero) header#main-nav.nav-hovered .logo-subtext { color: rgba(28,28,30,0.55) !important; text-shadow: 0 1px 12px rgba(0,0,0,0) !important; }
+  body:not(.on-hero) header#main-nav.nav-hovered .menu-btn { color: #1C1C1E !important; }
+  /* Hero'da hover → yazılar beyaz kalır */
+  body.on-hero header#main-nav.nav-hovered .nav-item { color: white !important; }
+  body.on-hero header#main-nav.nav-hovered .logo-text { color: white !important; }
+  body.on-hero header#main-nav.nav-hovered .logo-divider { color: rgba(255,255,255,0.2) !important; }
+  body.on-hero header#main-nav.nav-hovered .logo-subtext { color: rgba(255,255,255,0.72) !important; }
+  body.on-hero header#main-nav.nav-hovered .menu-btn { color: white !important; }
+
+  /* scrolled — artık sadece on-collection ile birlikte renk değişir */
+  body.scrolled:not(.on-collection):not(.on-hakkimizda):not(.on-randevu):not(.on-surec) header#main-nav .nav-item { color: white !important; }
+  body.scrolled:not(.on-collection):not(.on-hakkimizda):not(.on-randevu):not(.on-surec) header#main-nav .logo-text { color: white !important; }
+  body.scrolled:not(.on-collection):not(.on-hakkimizda):not(.on-randevu):not(.on-surec) header#main-nav .logo-divider { color: rgba(255,255,255,0.2) !important; }
+  body.scrolled:not(.on-collection):not(.on-hakkimizda):not(.on-randevu):not(.on-surec) header#main-nav .logo-subtext { color: rgba(255,255,255,0.72) !important; text-shadow: 0 1px 12px rgba(0,0,0,0.7) !important; }
+  body.scrolled:not(.on-collection):not(.on-hakkimizda):not(.on-randevu):not(.on-surec) header#main-nav .menu-btn { color: white !important; }
+  body.scrolled:not(.on-collection):not(.on-hakkimizda):not(.on-randevu):not(.on-surec) header#main-nav .nav-item:hover { opacity: 0.5 !important; }
+  /* scrolled + on-collection → koyu navbar */
+  body.scrolled.on-collection header#main-nav .nav-item { color: #000000 !important; opacity: 1 !important; }
+  body.scrolled.on-collection header#main-nav .logo-text { color: #000000 !important; }
+  body.scrolled.on-collection header#main-nav .logo-divider { color: rgba(0,0,0,0.42) !important; }
+  body.scrolled.on-collection header#main-nav .logo-subtext { color: rgba(0,0,0,0.82) !important; text-shadow: none !important; letter-spacing: 0.24em !important; font-weight: 800 !important; }
+  body.scrolled.on-collection header#main-nav .menu-btn { color: #000000 !important; }
+  body.scrolled.on-collection header#main-nav .nav-item:hover { opacity: 0.35 !important; }
+  /* Koleksiyon slide'ında nav renkleri koyu */
+  /* Koleksiyon slide nav renkleri — v8 style bloğunda ayarlanıyor (koyu tema) */
+
+  /* ══════════════════════════════════════════════
+     RANDEVU AL BUTONU
+     HER DURUMDA:
+       Default  → tamamen şeffaf zemin, altın border, altın yazı
+       Hover    → siyah zemin soldan sağa sweep, yazı parlaklaşır
+     Beyaz navbar'da border biraz daha koyu altın → daha görünür
+  ══════════════════════════════════════════════ */
+  .nav-cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    overflow: hidden;
+    background: transparent;
+  }
+  /* Siyah sweep katmanı — sadece hover'da aktif */
+  .nav-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #1C1C1E;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.42s cubic-bezier(0.76, 0, 0.24, 1);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .nav-cta:hover::before { transform: scaleX(1); }
+  .nav-cta::after { display: none; }
+
+  .nav-cta-inner {
+    display: block;
+    padding: 10px 24px;
+    position: relative;
+    z-index: 2;
+    font-family: 'Cinzel', serif;
+    font-size: 8.5px;
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    /* Default: şeffaf zemin, altın border + altın yazı */
+    color: rgba(212,175,55,0.88);
+    border: 1px solid rgba(212,175,55,0.52);
+    background: transparent;
+    transition:
+      color          0.45s ease,
+      border-color   0.45s ease,
+      letter-spacing 0.35s ease;
+  }
+  /* Hover → yazı tam altın, border güçlenir */
+  .nav-cta:hover .nav-cta-inner {
+    color: #D4AF37;
+    border-color: rgba(212,175,55,0.75);
+    letter-spacing: 0.3em;
+  }
+  /* Beyaz navbar → koyu border, koyu yazı — hero dışında non-collection olmayan */
+  body:not(.on-hero):not(.on-collection) header#main-nav.nav-hovered .nav-cta .nav-cta-inner,
+  body.scrolled.on-collection header#main-nav .nav-cta .nav-cta-inner {
+    color: rgba(28,28,30,0.8);
+    border-color: rgba(28,28,30,0.35);
+    background: transparent;
+  }
+  /* Hero hover → altın kalır */
+  body.on-hero header#main-nav.nav-hovered .nav-cta .nav-cta-inner {
+    color: rgba(212,175,55,0.88);
+    border-color: rgba(212,175,55,0.52);
+  }
+  /* Beyaz navbar hover → siyah sweep gelir, beyaz yazı — hero dışında collection'da */
+  body:not(.on-hero):not(.on-collection) header#main-nav.nav-hovered .nav-cta:hover .nav-cta-inner,
+  body.scrolled.on-collection header#main-nav .nav-cta:hover .nav-cta-inner {
+    color: #fff;
+    border-color: #1C1C1E;
+    letter-spacing: 0.3em;
+  }
+  .nav-cta-inner { position: relative; }
+
+  .hover-underline-animation { display:inline-block; position:relative; }
+  .hover-underline-animation::after {
+    content:'';
+    position:absolute;
+    width:100%;
+    transform:scaleX(0);
+    height:1px;
+    bottom:-4px; left:0;
+    background: currentColor;
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .hover-underline-animation:hover::after {
+    transform:scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .sheet-enter { transform: translateX(100%); opacity: 0; }
+  .sheet-enter-active { transform: translateX(0); opacity: 1; transition: all .4s cubic-bezier(0.16, 1, 0.3, 1); }
+  .sheet-leave { transform: translateX(0); opacity: 1; }
+  .sheet-leave-active { transform: translateX(100%); opacity: 0; transition: all .3s ease-in; }
+
+  .no-scroll { overflow:hidden; }
+  /* Focus ring — navbar ve nav linkleri için görünmez (tıklanınca sarı çıkmasın) */
+  .focus-ring:focus { outline: none; box-shadow: none; }
+  .focus-ring-round:focus { outline: none; box-shadow: none; }
+  /* Klavye navigasyonu için hâlâ erişilebilir */
+  .focus-ring:focus-visible { outline: none; box-shadow: 0 0 0 2px rgba(212,175,55,.3); border-radius: 4px; }
+  .focus-ring-round:focus-visible { outline: none; box-shadow: 0 0 0 2px rgba(212,175,55,.3); border-radius: 9999px; }
+
+  /* Section divider consistency */
+  .section-divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    margin: 1.5rem auto 0;
+  }
+  .section-divider-left {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    margin: 1.5rem 0 0;
+  }
+
+  /* Top bar mask */
+  .mask-linear-gradient {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  /* Collection cards subtle text shadow */
+  .collection-label-shadow { text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+
+  /* Testimonial card gold accent on hover */
+  .testimonial-card { border-top: 2px solid transparent; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+  .testimonial-card:hover { border-top-color: var(--primary); }
+
+  /* Stat number refined */
+  .stat-number { font-feature-settings: "tnum"; }
+
+  /* FAQ improved open state */
+  details[open] summary { color: var(--primary); }
+
+  /* Contact form label refined */
+  .form-label-float { transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease; }
+
+  /* Scroll arrow pulse */
+  @keyframes bounce-soft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+  }
+  .arrow-bounce { animation: bounce-soft 2s ease-in-out infinite; }
+
+  /* ── YSL-style swiper pagination — custom-pagination kullanılıyor, bunlar gizli ── */
+
+</style>
+
+<script>
+  const WHATSAPP_NUMBER = "90XXXXXXXXXX";
+  const DEFAULT_WA_TEXT = "Merhaba, Bileceli Bridal prova randevusu hakkında bilgi almak istiyorum.";
+  const WHATSAPP_LINK = (text = DEFAULT_WA_TEXT) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  const qs = (s) => document.querySelector(s);
+  const qsa = (s) => Array.from(document.querySelectorAll(s));
+
+  // Tarayıcı scroll restoration'ı kapat — Swiper kendi pozisyonunu yönetir
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+  // İlk yükleme flash'ını önle: transition olmadan başla, 300ms sonra aç
+  document.addEventListener('DOMContentLoaded', function() {
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        document.documentElement.classList.remove('no-nav-transition');
+      }, 300);
+    });
+  });
+
+  function setStickyNav(slideIndex) {
+    const body = document.body;
+    const nav = document.getElementById('main-nav');
+    if (nav) {
+      document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    }
+    // Slide 0 = hero → şeffaf navbar; diğerleri → beyaz navbar
+    if (slideIndex === undefined) slideIndex = 0;
+    if (slideIndex > 0) {
+      body.classList.add('scrolled');
+    } else {
+      body.classList.remove('scrolled');
+    }
+  }
+
+  function initNavHover() {
+    const nav = document.getElementById('main-nav');
+    if (!nav) return;
+    nav.addEventListener('mouseenter', () => nav.classList.add('nav-hovered'));
+    nav.addEventListener('mouseleave', () => nav.classList.remove('nav-hovered'));
+  }
+
+  /* Hero video — assets/herovid.mp4, 9. saniyeden başlar, sessiz, siyah-beyaz */
+  function initHeroVideo() {
+    const video = document.getElementById('hero-video');
+    if (!video) return;
+    const START_TIME = 9; // saniye
+
+    function seekToStart() {
+      try {
+        video.currentTime = START_TIME;
+      } catch (e) {
+        // metadata henüz hazır değilse loadedmetadata bekleyecek
+      }
+    }
+
+    if (video.readyState >= 1) {
+      seekToStart();
+    } else {
+      video.addEventListener('loadedmetadata', seekToStart, { once: true });
+    }
+
+    // Video 9. saniyeye ulaşınca fade in
+    function tryPlay() {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function() {
+          // autoplay engellendiyse sessizce yut, video zaten muted
+        });
+      }
+    }
+    tryPlay();
+
+    // Video bittiğinde 9. saniyeden yeniden başlat (loop 9sn'den olsun, 0'dan değil)
+    video.addEventListener('ended', function() {
+      video.currentTime = START_TIME;
+      tryPlay();
+    });
+
+    video.addEventListener('canplay', function() {
+      setTimeout(function() { video.style.opacity = '1'; }, 300);
+    }, { once: true });
+
+    // Fallback: 3sn sonra her hâlükârda göster
+    setTimeout(function() { video.style.opacity = '1'; }, 3000);
+  }
+
+  function alignLogoSubtexts() {
+    // Logo alt yazıları artık CSS grid ile hizalanıyor — JS gerekmez
+    window._alignLogos = function() {};
+  }
+
+  function openMobileMenu() {
+    const overlay = qs('#menu-overlay');
+    const sheet = qs('#menu-sheet');
+    document.body.classList.add('no-scroll');
+    overlay.classList.remove('hidden');
+    sheet.classList.remove('hidden');
+    sheet.classList.add('sheet-enter');
+    requestAnimationFrame(() => {
+      sheet.classList.add('sheet-enter-active');
+      sheet.classList.remove('sheet-enter');
+    });
+    qs('#menu-close')?.focus();
+    // Menü görünür olduktan sonra logo hizalamasını yenile
+    requestAnimationFrame(() => { if (window._alignLogos) window._alignLogos(); });
+  }
+
+  function closeMobileMenu() {
+    const overlay = qs('#menu-overlay');
+    const sheet = qs('#menu-sheet');
+    sheet.classList.remove('sheet-enter-active');
+    sheet.classList.add('sheet-leave');
+    requestAnimationFrame(() => {
+      sheet.classList.add('sheet-leave-active');
+      sheet.classList.remove('sheet-leave');
+    });
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+      sheet.classList.add('hidden');
+      sheet.classList.remove('sheet-leave-active');
+      document.body.classList.remove('no-scroll');
+    }, 300);
+  }
+
+  function initSmoothAnchors() {
+    qsa('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        e.preventDefault();
+
+        const sheet = qs('#menu-sheet');
+        if (sheet && !sheet.classList.contains('hidden')) closeMobileMenu();
+
+        // Swiper ile: ilgili slide'a git
+        if (window.pageSwiper) {
+          const targetEl = document.querySelector(id);
+          if (targetEl) {
+            // Find which slide contains this element — only top-level page slides
+            const slides = document.querySelectorAll('.page-swiper > .swiper-wrapper > .swiper-slide');
+            let slideIdx = -1;
+            slides.forEach((slide, i) => {
+              if (slide.contains(targetEl)) slideIdx = i;
+            });
+            if (slideIdx >= 0) {
+              /* _gotoSlide üzerinden git — navbar pre-fade ve yön
+                 koreografisi linkle tıklamada da çalışsın */
+              if (window._gotoSlide) window._gotoSlide(slideIdx);
+              else window.pageSwiper.slideTo(slideIdx);
+              return;
+            }
+          }
+        }
+      });
+    });
+  }
+
+  function initWhatsAppLinks() {
+    qsa('[data-whatsapp]').forEach(a => a.href = WHATSAPP_LINK());
+  }
+
+  function initFormToWhatsApp() {
+    const btn = qs('#contact-submit');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const name = qs('#f-name')?.value?.trim() || "";
+      const phone = qs('#f-phone')?.value?.trim() || "";
+      const email = qs('#f-email')?.value?.trim() || "";
+      const topic = qs('#f-topic')?.value || "";
+      const msg = qs('#f-msg')?.value?.trim() || "";
+      const text =
+        `Merhaba, prova randevusu oluşturmak istiyorum.\n` +
+        `Tercih edilen tarih: ${window._rvSelectedDate || "-"}\n` +
+        `Ad Soyad: ${name || "-"}\n` +
+        `Telefon: ${phone || "-"}\n` +
+        `E-posta: ${email || "-"}\n` +
+        `Konu: ${topic || "-"}\n` +
+        `Mesaj: ${msg || "-"}`;
+      window.open(WHATSAPP_LINK(text), '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  function initAccordion() {
+    const details = qsa('details[name="faq"]');
+    details.forEach((detail) => {
+      detail.addEventListener('toggle', () => {
+        if (detail.open) {
+          details.forEach((other) => {
+            if (other !== detail) other.open = false;
+          });
+        }
+      });
+    });
+  }
+
+  function init() {
+    initWhatsAppLinks();
+    setStickyNav();
+    initAccordion();
+    initNavHover();
+    qs('#menu-open')?.addEventListener('click', openMobileMenu);
+    qs('#menu-close')?.addEventListener('click', closeMobileMenu);
+    qs('#menu-overlay')?.addEventListener('click', closeMobileMenu);
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const sheet = qs('#menu-sheet');
+        if (sheet && !sheet.classList.contains('hidden')) closeMobileMenu();
+      }
+    });
+    initSmoothAnchors();
+    initFormToWhatsApp();
+    alignLogoSubtexts();
+    initHeroVideo();
+    initScrollAnimations();
+    window.addEventListener('resize', () => setStickyNav(window.pageSwiper ? window.pageSwiper.activeIndex : 0), { passive: true });
+
+    /* ── SAYFA LOADER kapat ── */
+    function dismissLoader() {
+      const loader = document.getElementById('page-loader');
+      if (!loader) return;
+      loader.classList.add('loaded');
+      setTimeout(() => { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 700);
+    }
+    if (document.readyState === 'complete') {
+      setTimeout(dismissLoader, 180);
+    } else {
+      window.addEventListener('load', function() { setTimeout(dismissLoader, 180); }, { once: true });
+    }
+
+    /* ── GELİNLERİMİZ + KOLEKSİYON görselleri hemen ön belleğe al ── */
+    function preloadAllImages() {
+      /* Gelinlerimiz fotoğrafları */
+      document.querySelectorAll('#gelin-grid img').forEach(function(img) {
+        if (img.complete && img.naturalWidth > 0) return;
+        var p = new window.Image();
+        p.src = img.src;
+      });
+      /* Koleksiyon GIF'leri */
+      document.querySelectorAll('.kgif').forEach(function(img) {
+        if (img.complete && img.naturalWidth > 0) return;
+        var p = new window.Image();
+        p.src = img.src;
+      });
+    }
+    preloadAllImages(); /* Hemen başlat — bekleme yok */
+
+    /* ── Navbar linkleri sürüklenemez ── */
+    document.querySelectorAll('header#main-nav a, header#main-nav img').forEach(function(el) {
+      el.setAttribute('draggable', 'false');
+      el.addEventListener('dragstart', function(e) { e.preventDefault(); });
+      el.addEventListener('mousedown', function(e) { e.preventDefault(); });
+    });
+  }
+
+  function initScrollAnimations() {
+    // Intersection Observer — sections fade-in-up quando entram na viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Apply animation class to sections
+    // Skip #koleksiyon (own observer) and #hakkimizda (Swiper-driven reveal below)
+    qsa('section').forEach((section) => {
+      if (section.id === 'koleksiyon') return;
+      if (section.id === 'hakkimizda') return;
+      section.classList.add('scroll-fade-in');
+      observer.observe(section);
+    });
+
+    // Apply to product cards too
+    qsa('.collection-label-shadow, .testimonial-card, [style*="position:relative"]').forEach((card) => {
+      if (card.querySelector('h3') || card.querySelector('p')) {
+        card.classList.add('scroll-fade-in');
+        observer.observe(card);
+      }
+    });
+
+    // Koleksiyon ultra-luxury reveal observer
+    const kolSection = qs('#koleksiyon');
+    if (kolSection) {
+      const kolObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('kol-visible');
+            kolObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      kolObserver.observe(kolSection);
+    }
+  }
+
+
+  /* LERP inertia scroll kaldırıldı — CSS scroll-snap kullanılıyor */
+  /* Anchor scroll: setStickyNav için scroll eventini senkronize et */
+  window.addEventListener('scroll', function() {
+    setStickyNav();
+  }, { passive: true });
+
+  document.addEventListener('DOMContentLoaded', init);
+</script>
+
+<style>
+  body { height: 100%; overflow: hidden; }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+  }
+</style>
+
+<style>
+  /* ── PAGE SWIPER — YSL style vertical fullscreen ── */
+  .page-swiper {
+    position: fixed !important;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 1;
+  }
+  /* Navbar floats above the swiper */
+  header#main-nav {
+    z-index: 50 !important;
+  }
+  /* Fixed elements float above swiper */
+  #menu-overlay, #menu-sheet, .fixed.bottom-6 {
+    z-index: 60 !important;
+  }
+  /* Scrollable slides */
+  .page-swiper .swiper-slide {
+    height: 100dvh !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .page-swiper .swiper-slide.slide-fullscreen {
+    overflow: hidden !important;
+  }
+  /* Swiper creative effect — next slides wait below */
+  .swiper-slide-shadow { display: none !important; }
+</style>
+</head>
+
+<body class="antialiased selection:bg-[var(--primary)] selection:text-white">
+
+<!-- ═══ SAYFA LOADER — ilk flash önleyici ═══ -->
+<div id="page-loader">
+  <span class="loader-logo">Bileceli Bridal</span>
+</div>
+
+<div id="top"></div>
+
+
+
+<header class="flex flex-col" id="main-nav">
+  <div class="nav-inner container-custom w-full" style="display:grid; grid-template-columns:1fr auto 1fr; align-items:center; position:relative; z-index:1;">
+
+    <!-- ── SOL: 3 nav linki ── -->
+    <nav id="nav-left" class="hidden lg:flex items-center justify-end" style="gap:clamp(18px,2.2vw,38px); padding-right:clamp(24px,3vw,52px);">
+      <a id="nav-koleksiyon" class="nav-item hover-underline-animation focus-ring" href="#koleksiyon" style="font-family:'Cinzel',serif; font-size:9px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.90); white-space:nowrap;">Koleksiyon</a>
+      <a class="nav-item hover-underline-animation focus-ring" href="#gelinlerimiz" style="font-family:'Cinzel',serif; font-size:9px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.90); white-space:nowrap;">Gelinlerimiz</a>
+      <a class="nav-item hover-underline-animation focus-ring" href="#surec" style="font-family:'Cinzel',serif; font-size:9px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.90); white-space:nowrap;">Süreç</a>
+    </nav>
+
+    <!-- ── ORTA: Logo ── -->
+    <a aria-label="Ana sayfa" class="relative group" href="#top" style="justify-self:center; outline:none;"
+       onclick="if(window.pageSwiper){event.preventDefault();window.pageSwiper.slideTo(0);}">
+      <div id="nav-logo-core" style="display:inline-grid; grid-template-columns:auto auto auto; align-items:center; gap:0; line-height:1;">
+        <div style="display:flex; flex-direction:column; align-items:flex-end;">
+          <span id="logo-sone" class="logo-text font-logo uppercase text-white" style="font-size:clamp(1.25rem,2.4vw,2rem); font-weight:600; letter-spacing:0.1em; line-height:1; display:block; margin-right:-0.1em;">SONE</span>
+          <span id="logo-baran" class="logo-subtext uppercase" style="font-size:clamp(6.5px,0.6vw,9px); font-weight:700; letter-spacing:0.22em; margin-top:5px; line-height:1; white-space:nowrap; color:rgba(255,255,255,0.72); display:block; text-shadow:0 1px 12px rgba(0,0,0,0.7);">BARAN</span>
+        </div>
+        <span class="logo-divider font-extralight" style="font-size:clamp(0.9rem,1.8vw,1.5rem); line-height:1; padding:0 clamp(8px,1vw,14px); display:block; padding-bottom:3px; color:rgba(255,255,255,0.2);">|</span>
+        <div style="display:flex; flex-direction:column; align-items:flex-start;">
+          <span id="logo-moda" class="logo-text font-logo uppercase text-white" style="font-size:clamp(1.25rem,2.4vw,2rem); font-weight:600; letter-spacing:0.1em; line-height:1; display:block; margin-left:-0.1em;">MODA</span>
+          <span id="logo-bileceli" class="logo-subtext uppercase" style="font-size:clamp(6.5px,0.6vw,9px); font-weight:700; letter-spacing:0.22em; margin-top:5px; line-height:1; white-space:nowrap; color:rgba(255,255,255,0.72); display:block; text-shadow:0 1px 12px rgba(0,0,0,0.7);">BİLECELİ</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── SAĞ: 3 nav linki + Randevu Al + hamburger ── -->
+    <div id="nav-right" class="flex items-center justify-start" style="padding-left:clamp(24px,3vw,52px); gap:clamp(18px,2.2vw,38px);">
+      <nav class="hidden lg:flex items-center" style="gap:clamp(18px,2.2vw,38px);">
+        <a class="nav-item hover-underline-animation focus-ring" href="/blog" style="font-family:'Cinzel',serif; font-size:9px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.90); white-space:nowrap;">Blog</a>
+        <a class="nav-item hover-underline-animation focus-ring" href="#iletisim" style="font-family:'Cinzel',serif; font-size:9px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.90); white-space:nowrap;">İletişim</a>
+        <a class="nav-item hover-underline-animation focus-ring" href="#sss" style="font-family:'Cinzel',serif; font-size:9px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.90); white-space:nowrap;">S.S.S</a>
+      </nav>
+      <button aria-label="Menüyü aç" class="lg:hidden menu-btn text-white hover:opacity-70 transition-opacity focus-ring" id="menu-open">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]" id="menu-overlay"></div>
+<aside class="hidden fixed top-0 right-0 w-[85%] max-w-sm h-full bg-[var(--bg)] z-[70] shadow-2xl flex flex-col border-l border-[var(--primary)]/20" id="menu-sheet">
+  <div class="p-8 flex items-center justify-between border-b border-gray-200">
+    <a aria-label="Ana sayfa" href="#top" style="outline:none;"
+       onclick="if(window.pageSwiper){event.preventDefault();window.pageSwiper.slideTo(0);}">
+      <div style="display:inline-grid; grid-template-columns:auto auto auto; align-items:center; line-height:1;">
+        <div style="display:flex; flex-direction:column; align-items:flex-end;">
+          <span id="m-logo-sone" class="logo-text font-logo uppercase text-[var(--secondary)]" style="font-size:1.15rem; font-weight:600; letter-spacing:0.1em; line-height:1; display:block; margin-right:-0.1em;">SONE</span>
+          <span id="m-logo-baran" class="logo-subtext uppercase" style="font-size:7.5px; font-weight:700; letter-spacing:0.22em; margin-top:4px; line-height:1; white-space:nowrap; color:rgba(28,28,30,0.6); display:block;">BARAN</span>
+        </div>
+        <span class="logo-divider font-extralight text-gray-300" style="font-size:1rem; padding:0 9px; display:block; padding-bottom:2px; line-height:1;">|</span>
+        <div style="display:flex; flex-direction:column; align-items:flex-start;">
+          <span id="m-logo-moda" class="logo-text font-logo uppercase text-[var(--secondary)]" style="font-size:1.15rem; font-weight:600; letter-spacing:0.1em; line-height:1; display:block; margin-left:-0.1em;">MODA</span>
+          <span id="m-logo-bileceli" class="logo-subtext uppercase" style="font-size:7.5px; font-weight:700; letter-spacing:0.22em; margin-top:4px; line-height:1; white-space:nowrap; color:rgba(28,28,30,0.6); display:block;">BİLECELİ</span>
+        </div>
+      </div>
+    </a>
+    <button aria-label="Menüyü kapat" class="p-2 rounded-full hover:bg-gray-200 transition focus-ring" id="menu-close">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <nav class="flex-1 p-8 space-y-6 overflow-y-auto">
+    <a class="block text-xl font-serif italic text-[var(--secondary)] hover:text-[var(--primary)] transition-colors focus-ring" href="#koleksiyon">Koleksiyonlar</a>
+    <a class="block text-xl font-serif italic text-[var(--secondary)] hover:text-[var(--primary)] transition-colors focus-ring" href="#gelinlerimiz">Gelinlerimiz</a>
+    <a class="block text-xl font-serif italic text-[var(--secondary)] hover:text-[var(--primary)] transition-colors focus-ring" href="#surec">Süreç</a>
+    <a class="block text-xl font-serif italic text-[var(--secondary)] hover:text-[var(--primary)] transition-colors focus-ring" href="/blog">Blog</a>
+    <a class="block text-xl font-serif italic text-[var(--secondary)] hover:text-[var(--primary)] transition-colors focus-ring" href="#iletisim">İletişim</a>
+    <a class="block text-xl font-serif italic text-[var(--secondary)] hover:text-[var(--primary)] transition-colors focus-ring" href="#sss">S.S.S</a>
+    <a class="block mt-8 btn-dark-outline text-center focus-ring" href="#randevu">Randevu Al</a>
+  </nav>
+  <div class="p-8 border-t border-gray-200 bg-white">
+    <p class="text-xs text-gray-500 mb-4 uppercase tracking-wider">İletişim</p>
+    <a class="flex items-center gap-3 text-sm font-medium text-[var(--secondary)] focus-ring" data-whatsapp="" href="#">
+      <span class="material-symbols-outlined text-[var(--primary)]">chat</span>
+      WhatsApp Destek Hattı
+    </a>
+  </div>
+</aside>
+
+<div class="swiper page-swiper"><div class="swiper-wrapper"><div class="swiper-slide slide-fullscreen"><section class="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+  <!-- Video Arka Plan -->
+  <div class="absolute inset-0 z-0" style="background:#000;">
+    <div style="position:absolute; inset:0; overflow:hidden; pointer-events:none;">
+      <video
+        id="hero-video"
+        src="assets/herovid.mp4"
+        autoplay
+        muted
+        playsinline
+        preload="auto"
+        style="position:absolute; top:50%; left:50%; width:100vw; height:56.25vw; min-height:100vh; min-width:177.78vh; transform:translate(-50%,-50%); pointer-events:none; opacity:0; transition:opacity 1.4s ease; filter:grayscale(100%); object-fit:cover;"
+        title="Bileceli Bridal Background"
+      ></video>
+    </div>
+    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.52); z-index:1;"></div>
+    <div style="position:absolute; bottom:0; left:0; right:0; height:220px; background:linear-gradient(to top, rgba(0,0,0,0.4), transparent); z-index:2;"></div>
+  </div>
+  <!-- Hero scroll CTA -->
+  <div id="hero-scroll-cta" style="
+    position:absolute; bottom:clamp(28px,4vh,48px); left:50%; transform:translateX(-50%);
+    z-index:10; display:flex; flex-direction:column; align-items:center; gap:10px;
+    cursor:pointer; user-select:none;
+  " onclick="if(window.pageSwiper) window.pageSwiper.slideTo(1);">
+    <span style="
+      font-family:'Cinzel',serif; font-size:7.5px; font-weight:500;
+      letter-spacing:0.46em; text-transform:uppercase;
+      color:rgba(255,255,255,0.45);
+    ">Koleksiyonlar</span>
+    <div style="animation:hero-bounce 2.2s ease-in-out infinite;">
+      <svg width="20" height="11" viewBox="0 0 20 11" fill="none">
+        <path d="M1 1l9 9 9-9" stroke="rgba(255,255,255,0.3)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <style>
+    @keyframes hero-bounce {
+      0%,100% { transform:translateY(0); }
+      50%      { transform:translateY(5px); }
+    }
+    #hero-scroll-cta:hover span { color:rgba(255,255,255,0.7); transition:color 0.3s ease; }
+    #hero-scroll-cta:hover svg path { stroke:rgba(255,255,255,0.55); transition:stroke 0.3s ease; }
+  </style>
+</section></div><!-- /slide hero -->
+
+<div class="swiper-slide slide-fullscreen" id="slide-koleksiyon">
+  <section id="koleksiyon">
+
+    <div id="col-swiper">
+      <div class="swiper-wrapper">
+
+        <!-- KART 1 — GELİNLİK -->
+        <div class="swiper-slide ks" id="ks1">
+          <div class="kstage">
+            <div class="ktext">
+              <h2 class="ka k4 kttl">Gelinlik</h2>
+              <div class="ka k5 krule"></div>
+              <p class="ka k6 kdsc">Hayalinizdeki anı gerçeğe taşıyan, her dikişinde özen saklı tasarımlar. Size özel biçilen, ömür boyu hatırlanacak parçalar.</p>
+              <a href="/koleksiyonlar/gelinlik" class="ka k7 kcta">
+                <span class="kcta-lb">Koleksiyonu Keşfet</span>
+                <span class="kcta-ar"><span class="kcta-tp"></span></span>
+              </a>
+            </div>
+            <div class="kgif-area">
+              <div class="kgif-wrap">
+                <img class="ka k-gif kgif" src="assets/gif-gelinlik.gif" alt="Gelinlik"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KART 2 — HAUTE COUTURE -->
+        <div class="swiper-slide ks" id="ks2">
+          <div class="kstage">
+            <div class="ktext">
+              <h2 class="ka k4 kttl">Haute Couture</h2>
+              <div class="ka k5 krule"></div>
+              <p class="ka k6 kdsc">Sizi tanıdıkça şekillenen, tamamen size özel bir tasarım süreci. Atölyemizde hayat bulan her parça, stiliniz ve ölçüleriniz doğrultusunda yalnızca sizin için hazırlanır.</p>
+              <a href="/koleksiyonlar/haute-couture" class="ka k7 kcta">
+                <span class="kcta-lb">Koleksiyonu Keşfet</span>
+                <span class="kcta-ar"><span class="kcta-tp"></span></span>
+              </a>
+            </div>
+            <div class="kgif-area">
+              <div class="kgif-wrap">
+                <img class="ka k-gif kgif" src="assets/gif-haute-couture.gif" alt="Haute Couture" loading="lazy"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KART 3 — AFTER PARTY -->
+        <div class="swiper-slide ks" id="ks3">
+          <div class="kstage">
+            <div class="ktext">
+              <h2 class="ka k4 kttl">After Party</h2>
+              <div class="ka k5 krule"></div>
+              <p class="ka k6 kdsc">Gece bitmeden önce sahne bir kez daha sizin. Kutlamanın ikinci perdesi için özgür, özgün ve unutulmaz tasarımlar.</p>
+              <a href="/koleksiyonlar/after-party" class="ka k7 kcta">
+                <span class="kcta-lb">Koleksiyonu Keşfet</span>
+                <span class="kcta-ar"><span class="kcta-tp"></span></span>
+              </a>
+            </div>
+            <div class="kgif-area">
+              <div class="kgif-wrap">
+                <img class="ka k-gif kgif" src="assets/gif-after-party.gif" alt="After Party" loading="lazy"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══ Koleksiyon alt etiket barı ══ -->
+  <div id="kol-label-bar">
+    <button class="kol-lbl active" data-kl="0" aria-label="Gelinlik"></button>
+    <button class="kol-lbl" data-kl="1" aria-label="Haute Couture"></button>
+    <button class="kol-lbl" data-kl="2" aria-label="After Party"></button>
+  </div>
+
+  <style>
+    /* ══ Temel yapı ══ */
+    #slide-koleksiyon { background:#FAFAF8 !important; }
+    #slide-koleksiyon section#koleksiyon {
+      position:absolute; inset:0;
+      background:#FAFAF8 !important;
+      opacity:1 !important;          /* scroll-fade-in override */
+      transform:none !important;     /* scroll-fade-in override */
+    }
+    #col-swiper {
+      position:absolute; top:0; left:0;
+      width:100%; height:100%; overflow:hidden;
+    }
+    .ks { width:100%!important; height:100%!important; overflow:hidden; }
+
+    /* ══ Stage: JS tarafından padding-left/right ayarlanır ══ */
+    .kstage {
+      width:100%;
+      height:100%;
+      padding-top: var(--nav-h,68px);
+      padding-bottom: 52px;   /* label bar için alan */
+      box-sizing:border-box;
+      display:flex;
+      align-items:center;
+      gap: clamp(40px,5vw,80px);
+      /* Fallback — JS override eder */
+      padding-left: clamp(60px,7vw,120px);
+      padding-right: clamp(60px,7vw,120px);
+    }
+
+    /* ══ SOL: Metin alanı ══ */
+    .ktext {
+      flex: 0 0 auto;
+      width: clamp(240px,32vw,400px);
+      display:flex;
+      flex-direction:column;
+      position: relative;
+    }
+
+
+
+    /* ══ SAĞ: GIF alanı ══ */
+    .kgif-area {
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      height:calc(100% - var(--nav-h,68px) - 52px);
+      overflow:visible;
+      position: relative;
+    }
+    /* GIF wrapper — slide arka planıyla eşleşen zemin, sadece üst shadow */
+    .kgif-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #FAFAF8;
+      box-shadow: 0 -6px 28px rgba(0,0,0,0.07);
+      will-change: opacity, transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    /* Aktif değilken ANINDA gizle — shadow/içerik sızdırmaz */
+    .ks:not(.swiper-slide-active) .kgif-wrap {
+      opacity: 0 !important;
+      transform: translateX(14px) !important;
+      transition: none !important;
+    }
+    .kgif-wrap { transform:translateX(14px); transition:opacity .55s cubic-bezier(.25,.46,.45,.94), transform .7s cubic-bezier(.25,.46,.45,.94); opacity:0; }
+    .ks.swiper-slide-active .kgif-wrap { opacity:1; transform:translateX(0); transition-delay:.10s; }
+    .kgif {
+      display:block;
+      height: clamp(340px, 74vh, calc(100dvh - var(--nav-h,68px) - 48px));
+      width: auto;
+      max-width: clamp(260px, 38vw, 540px);
+      object-fit: contain;
+      vertical-align: bottom;
+    }
+
+    /* ══ Giriş animasyonları ══ */
+    .ka {
+      opacity:0;
+      transform:translateY(10px);
+      transition:opacity .55s cubic-bezier(.25,.46,.45,.94),
+                 transform .55s cubic-bezier(.25,.46,.45,.94);
+      will-change: opacity, transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    /* Aktif olmayan slide içerikleri anında gizle */
+    .ks:not(.swiper-slide-active) .ka {
+      opacity: 0 !important;
+      transform: translateY(10px) !important;
+      transition: none !important;
+    }
+    .k-gif { transform:translateX(14px); transition-duration:.7s; }
+
+    .ks.swiper-slide-active .ka  { opacity:1; transform:none; }
+    .ks.swiper-slide-active .k1  { transition-delay:.04s; }
+    .ks.swiper-slide-active .k2  { transition-delay:.11s; }
+    .ks.swiper-slide-active .k3  { transition-delay:.18s; }
+    .ks.swiper-slide-active .k4  { transition-delay:.24s; }
+    .ks.swiper-slide-active .k5  { transition-delay:.30s; }
+    .ks.swiper-slide-active .k6  { transition-delay:.36s; }
+    .ks.swiper-slide-active .k7  { transition-delay:.42s; }
+    .ks.swiper-slide-active .k8  { transition-delay:.48s; }
+    .ks.swiper-slide-active .k9  { transition-delay:.54s; }
+    .ks.swiper-slide-active .k-gif { transition-delay:.10s; }
+    .ks.swiper-slide-active .krule { width:42px; }
+
+    /* ══ Haute Couture font render kalitesi — Bodoni Moda optimized ══ */
+    #slide-koleksiyon,
+    #slide-koleksiyon * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    /* Bodoni Moda optical sizing güçlendir */
+    .kttl, .kcat, .ke-tx, .kcta-lb, .kall, .kol-lbl-name, .kol-lbl-num {
+      font-optical-sizing: auto;
+    }
+
+    /* ══ Metin stilleri ══ */
+    .k1 {
+      display:flex; align-items:center; gap:12px;
+      margin-bottom:clamp(14px,2.2vh,26px);
+    }
+    .ke-ln { display:block; width:36px; height:1px; background:rgba(212,175,55,.9); flex-shrink:0; }
+    .ke-tx {
+      font-family:'Bodoni Moda', serif;
+      font-size:10px; font-weight:400;
+      font-style:italic;
+      font-optical-sizing:auto;
+      letter-spacing:.3em; text-transform:uppercase;
+      color:rgba(28,28,30,.65);
+      white-space:nowrap;
+    }
+    .kcat {
+      font-family:'Bodoni Moda', serif;
+      font-size:11px; font-weight:500;
+      font-style:italic;
+      font-optical-sizing:auto;
+      letter-spacing:.28em; text-transform:uppercase;
+      color:#C9A227;
+      display:block; margin-bottom:14px;
+    }
+    .kttl {
+      font-family:'Cinzel', serif;
+      font-size:clamp(2.6rem,4.6vw,6rem); font-weight:500; font-style:normal;
+      font-optical-sizing:auto;
+      color:#0A0A0A; line-height:1.05; margin:0; letter-spacing:0.02em;
+      text-transform:uppercase;
+      margin-top: clamp(8px,1.5vh,18px);
+    }
+    .krule {
+      width:20px; height:1px;
+      background:linear-gradient(90deg, rgba(212,175,55,.5) 0%, rgba(212,175,55,.12) 70%, transparent 100%);
+      margin: clamp(24px,3.8vh,46px) 0;
+      transition:width 1s cubic-bezier(0.25,.46,.45,.94) .52s;
+    }
+    .ks.swiper-slide-active .krule { width:64px; }
+    .kdsc {
+      font-family:'Manrope',sans-serif;
+      font-size:clamp(12.5px,0.88vw,14px);
+      font-weight:400;
+      color:rgba(28,28,30,.72);
+      line-height:2.0;
+      margin:0;
+      letter-spacing:0.025em;
+      max-width:38ch;
+    }
+    .kcta {
+      display:inline-flex; align-items:center; gap:14px;
+      text-decoration:none;
+      margin-top: clamp(36px,5vh,58px);
+    }
+    .kcta-lb {
+      font-family:'Cinzel', serif;
+      font-size:9.5px; font-weight:500;
+      font-optical-sizing:auto;
+      letter-spacing:.32em; text-transform:uppercase;
+      color:rgba(28,28,30,.80);
+      position: relative;
+      padding-bottom: 7px;
+      transition: color .55s ease, letter-spacing .55s ease;
+    }
+    .kcta-lb::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(201,162,39,.75), rgba(201,162,39,.0));
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+    }
+    .kcta:hover .kcta-lb { letter-spacing:.40em; color:#0A0A0A; }
+    .kcta:hover .kcta-lb::after { transform: scaleX(1); }
+    .kcta-ar { display:none; }
+    .kcta-tp { display:none; }
+
+    .kfoot { display:none; }  /* kaldırıldı — alt label bar kullanılıyor */
+    .knum  { display:none; }  /* kaldırıldı — alt label bar kullanılıyor */
+    .kall { display:inline-flex; align-items:center; gap:9px; text-decoration:none; font-family:'Bodoni Moda',serif; font-size:10px; font-weight:500; font-style:italic; font-optical-sizing:auto; letter-spacing:.22em; text-transform:uppercase; color:rgba(28,28,30,.72); margin-top:16px; transition:color .4s ease,gap .4s ease; }
+    .kall:hover { color:rgba(28,28,30,.92); gap:14px; }
+    .kall-a { display:inline-block; width:14px; height:1px; background:currentColor; position:relative; }
+    .kall-a::after { content:''; position:absolute; right:-1px; top:-2px; border:solid currentColor; border-width:0 1px 1px 0; padding:1.5px; transform:rotate(-45deg); }
+
+    /* ══ Navbar — beyaz zemin uyumlu ══ */
+    body.on-collection .swiper-pagination-bullet        { background:rgba(28,28,30,.18)!important; }
+    body.on-collection .swiper-pagination-bullet-active { background:rgba(28,28,30,.6)!important; }
+    body.on-collection header#main-nav::before {
+      background:rgba(250,250,248,.93)!important;
+      backdrop-filter:blur(18px) saturate(1.1)!important;
+      -webkit-backdrop-filter:blur(18px) saturate(1.1)!important;
+    }
+    body.on-collection header#main-nav { box-shadow:0 1px 0 rgba(28,28,30,.06)!important; }
+    body.on-collection header#main-nav .nav-item     { color:#000000!important; opacity:1!important; }
+    body.on-collection header#main-nav .logo-text    { color:#000000!important; }
+    body.on-collection header#main-nav .logo-divider { color:rgba(0,0,0,.42)!important; }
+    body.on-collection header#main-nav .logo-subtext { color:rgba(0,0,0,.82)!important; text-shadow:none!important; letter-spacing:0.24em!important; font-weight:800!important; }
+    body.on-collection header#main-nav .menu-btn     { color:#000000!important; }
+    body.on-collection .nav-cta .nav-cta-inner       { color:#000000!important; border-color:rgba(0,0,0,.55)!important; }
+    body.on-collection header#main-nav .nav-item:hover { opacity:.35!important; }
+
+    /* ══ Responsive ══ */
+    @media (max-width:767px) {
+      .kstage { flex-direction:column-reverse; padding-left:24px!important; padding-right:24px!important; gap:14px; padding-top:calc(var(--nav-h,68px) + 10px); padding-bottom:56px; align-items:flex-start; }
+      .kgif-area { width:100%; height:200px; flex:0 0 200px; justify-content:flex-start; overflow:visible; }
+      .kgif-wrap { height:100%; }
+      .kgif { height:100%; width:auto; }
+      .ktext { width:100%; }
+      .knum { display:none; }
+      .kttl { font-size:2.0rem; letter-spacing:0.04em; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      .ka { transition-duration:.05s!important; transition-delay:0s!important; }
+    }
+
+    /* ══ Koleksiyon alt etiket barı — bütünleşik ══ */
+    #kol-label-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      z-index: 10;
+      padding: 20px 0;
+      opacity: 0;
+      transition: opacity 0.5s ease 0.25s;
+      pointer-events: none;
+    }
+    body.on-collection #kol-label-bar {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .kol-lbl {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    /* Çizgi göstergesi — ::after ile */
+    .kol-lbl::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: rgba(28,28,30,0.22);
+      transition:
+        width 0.55s cubic-bezier(0.25,0.46,0.45,0.94),
+        background 0.35s ease;
+    }
+    .kol-lbl.active::after {
+      width: 48px;
+      background: rgba(28,28,30,0.75);
+    }
+    .kol-lbl:not(.active):hover::after {
+      background: rgba(28,28,30,0.42);
+      width: 32px;
+    }
+    /* ::before artık kullanılmıyor — temizle */
+    .kol-lbl::before { display: none; }
+
+    @media (max-width:767px) {
+      #kol-label-bar { gap: 10px; padding: 16px 0; }
+      .kol-lbl::after { width: 20px; }
+      .kol-lbl.active::after { width: 38px; }
+    }
+  </style>
+
+  <script>
+  (function(){
+
+    /* ══ Nav hizalama: nav görünürse nav'a hizala, yoksa simetrik varsayılan ══ */
+    function alignStages() {
+      var navItems = document.querySelectorAll('header#main-nav .nav-item');
+      var stageEls = document.querySelectorAll('.kstage');
+      if (!stageEls.length) return;
+
+      var winW = window.innerWidth;
+      var pL, pR;
+
+      /* Nav item'ları gerçekten görünür mü kontrol et */
+      var firstValid = null, lastValid = null;
+      navItems.forEach(function(el) {
+        var r = el.getBoundingClientRect();
+        if (r.left > 0 || r.right > 0) {
+          if (!firstValid) firstValid = r;
+          lastValid = r;
+        }
+      });
+
+      if (firstValid && lastValid) {
+        /* Desktop: nav görünür — nav kenarlarına hizala */
+        pL = Math.max(40, Math.round(firstValid.left));
+        pR = Math.max(40, Math.round(winW - lastValid.right));
+      } else {
+        /* Mobile/tablet: nav gizli — simetrik oran tabanlı padding */
+        pL = Math.round(Math.max(24, winW * 0.055));
+        pR = pL;
+      }
+
+      stageEls.forEach(function(s){
+        s.style.paddingLeft  = pL + 'px';
+        s.style.paddingRight = pR + 'px';
+        s.style.maxWidth     = 'none';
+      });
+    }
+
+    /* Resize'da yeniden hizala */
+    window.addEventListener('resize', alignStages, {passive:true});
+
+    /* ══ İç Swiper ══ */
+    var LOCK=680, locked=false;
+    function initCS(){
+      if(typeof Swiper==='undefined'){setTimeout(initCS,80);return;}
+      var cs=new Swiper('#col-swiper',{
+        direction:'horizontal',speed:720,slidesPerView:1,
+        allowTouchMove:false,mousewheel:false,
+        cssEase:'cubic-bezier(0.77,0,0.175,1)'
+      });
+      window.colSwiper=cs;
+
+      /* İlk hizalama — Swiper hazır olduktan sonra */
+      setTimeout(alignStages, 80);
+
+      document.querySelectorAll('.kprev').forEach(function(b){
+        b.addEventListener('click',function(){
+          cs.isBeginning?(window.pageSwiper&&window.pageSwiper.slidePrev()):cs.slidePrev();
+        });
+      });
+      document.querySelectorAll('.knxt').forEach(function(b){
+        b.addEventListener('click',function(){
+          cs.isEnd?(window.pageSwiper&&window.pageSwiper.slideNext()):cs.slideNext();
+        });
+      });
+
+      /* Collection slide geçişinde pagination güncelle */
+      cs.on('slideChange', function() {
+        if (window.pageSwiper && window.pageSwiper.activeIndex === 1) {
+          if (typeof updateCustomPagination === 'function') updateCustomPagination(1, cs.activeIndex);
+        }
+      });
+
+      var _kLocked=false, _kHardDone=false;
+      var _kHard=null, _kExt=null, _kAccT=null;
+      var _kAcc=0;
+      var K_HARD=780, K_EXTEND=380, K_THRESH=38;
+      function kNorm(e){ var d=e.deltaY; if(e.deltaMode===1) d*=16; else if(e.deltaMode===2) d*=(window.innerHeight||800); return d; }
+
+      function kLock(){
+        _kLocked=true; _kHardDone=false; _kAcc=0;
+        clearTimeout(_kHard); clearTimeout(_kExt);
+        _kHard=setTimeout(function(){ _kHardDone=true; kTryUnlock(); }, K_HARD);
+      }
+      function kExtend(){
+        clearTimeout(_kExt);
+        _kExt=setTimeout(function(){ kTryUnlock(); }, K_EXTEND);
+      }
+      function kTryUnlock(){ if(_kHardDone){ _kLocked=false; _kAcc=0; } }
+      window._kLockNow = function(){ kLock(); kExtend(); };
+
+      function go(d){
+        if(_kLocked)return;
+        kLock();
+        if(d>0){
+          if(cs.isEnd){ if(window.pageSwiper){ if(window._gotoSlide) window._gotoSlide(2); else { if(window._pageSwiperLock) window._pageSwiperLock(); window.pageSwiper.slideNext(); } } }
+          else cs.slideNext();
+        } else {
+          if(cs.isBeginning){ if(window.pageSwiper){ if(window._pageSwiperLock) window._pageSwiperLock(); window.pageSwiper.slidePrev(); } }
+          else cs.slidePrev();
+        }
+      }
+
+      var el=document.getElementById('slide-koleksiyon');
+      el.addEventListener('wheel',function(e){
+        if(!window.pageSwiper||window.pageSwiper.activeIndex!==1)return;
+        e.preventDefault();e.stopPropagation();
+        if(_kLocked){ kExtend(); return; }
+        clearTimeout(_kAccT);
+        _kAcc += kNorm(e);
+        if(Math.abs(_kAcc) >= K_THRESH){ go(_kAcc); return; }
+        _kAccT=setTimeout(function(){ _kAcc=0; }, 100);
+      },{passive:false});
+
+      var ty=0, _kFired=false;
+      el.addEventListener('touchstart',function(e){ty=e.touches[0].clientY;_kFired=false;},{passive:true});
+      el.addEventListener('touchmove',function(e){
+        if(_kFired)return;
+        if(!window.pageSwiper||window.pageSwiper.activeIndex!==1)return;
+        var d=ty-e.touches[0].clientY;
+        if(Math.abs(d)>34){ _kFired=true; go(d); }
+      },{passive:true});
+
+      document.addEventListener('keydown',function(e){
+        if(!window.pageSwiper||window.pageSwiper.activeIndex!==1)return;
+        if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();go(1);}
+        if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();go(-1);}
+      });
+
+      function hookMain(){
+        if(!window.pageSwiper){setTimeout(hookMain,100);return;}
+        window.pageSwiper.on('slideChangeTransitionEnd',function(){
+          /* koleksiyon slide'ına dönüşte hizala */
+          if(this.activeIndex===1){ alignStages(); }
+        });
+        alignStages();
+      }
+      hookMain();
+    }
+
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initCS);
+    else initCS();
+
+  })();
+  </script>
+
+  <script>
+  /* ══ Koleksiyon alt çizgi barı — tıklama + sync ══ */
+  (function(){
+    function syncLbl(colIdx) {
+      document.querySelectorAll('.kol-lbl[data-kl]').forEach(function(btn) {
+        btn.classList.toggle('active', parseInt(btn.dataset.kl) === colIdx);
+      });
+    }
+
+    document.querySelectorAll('.kol-lbl[data-kl]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var idx = parseInt(this.dataset.kl);
+        if(window.pageSwiper && window.pageSwiper.activeIndex !== 1){
+          window.pageSwiper.slideTo(1);
+          setTimeout(function(){ if(window.colSwiper) window.colSwiper.slideTo(idx); }, 80);
+        } else if(window.colSwiper){
+          window.colSwiper.slideTo(idx);
+        }
+      });
+    });
+
+    function hookLbl() {
+      if (!window.colSwiper) { setTimeout(hookLbl, 100); return; }
+      window.colSwiper.on('slideChange', function() { syncLbl(this.activeIndex); });
+    }
+    hookLbl();
+  })();
+  </script>
+
+</div><!-- /slide koleksiyon -->
+
+
+
+
+<div class="swiper-slide slide-fullscreen" id="slide-gelinlerimiz">
+<section id="gelinlerimiz" style="position:absolute;inset:0;background:#F4EFEA;overflow:hidden;transform:translate3d(0,0,0);will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;">
+
+  <!-- ══ FOTOĞRAF GRİDİ — VSCO editorial, gap = görsel ayırıcı ══ -->
+  <div id="gelin-grid">
+
+    <!-- Kolon 1 -->
+    <div class="gelin-col">
+      <div class="gelin-cell gc-a"><img src="assets/g01.jpg" alt="" loading="eager" decoding="sync"/></div>
+      <div class="gelin-cell gc-b"><img src="assets/g02.jpg" alt="" loading="eager"/></div>
+      <div class="gelin-cell gc-c"><img src="assets/g03.jpg" alt="" loading="eager"/></div>
+    </div>
+
+    <!-- Kolon 2 -->
+    <div class="gelin-col">
+      <div class="gelin-cell gc-c"><img src="assets/g05.jpg" alt="" loading="eager" decoding="sync"/></div>
+      <div class="gelin-cell gc-a"><img src="assets/g06.jpg" alt="" loading="eager"/></div>
+      <div class="gelin-cell gc-b"><img src="assets/g07.jpg" alt="" loading="eager"/></div>
+    </div>
+
+    <!-- Kolon 3 -->
+    <div class="gelin-col">
+      <div class="gelin-cell gc-b"><img src="assets/g09.jpg" alt="" loading="eager" decoding="sync"/></div>
+      <div class="gelin-cell gc-c"><img src="assets/g10.jpg" alt="" loading="eager"/></div>
+      <div class="gelin-cell gc-a"><img src="assets/g11.jpg" alt="" loading="eager"/></div>
+    </div>
+
+    <!-- Kolon 4 -->
+    <div class="gelin-col">
+      <div class="gelin-cell gc-a"><img src="assets/g13.jpg" alt="" loading="eager" decoding="sync"/></div>
+      <div class="gelin-cell gc-c"><img src="assets/g14.jpg" alt="" loading="eager"/></div>
+      <div class="gelin-cell gc-b"><img src="assets/g16.jpg" alt="" loading="eager"/></div>
+    </div>
+
+  </div>
+
+  <!-- Sol fade — başlık geçişi için -->
+  <div style="position:absolute;top:0;left:0;bottom:0;width:50%;z-index:2;pointer-events:none;
+    background:linear-gradient(to right,rgba(244,239,234,0.70) 0%,rgba(244,239,234,0.34) 28%,rgba(244,239,234,0.10) 52%,transparent 72%);"></div>
+  <!-- Alt fade — logo alanı -->
+  <div class="gelin-bottom-fade" style="position:absolute;bottom:0;left:0;right:0;height:22%;z-index:2;pointer-events:none;
+    background:linear-gradient(to top,rgba(244,239,234,0.78) 0%,transparent 100%);"></div>
+
+  <!-- SOL: Başlık bloğu -->
+  <div id="gelin-title-block">
+    <div class="gelin-title-wrap">
+      <h2 class="gelin-title-ghost" aria-hidden="true">GELİNLERİMİZ</h2>
+      <h2 class="gelin-title">GELİNLERİMİZ</h2>
+    </div>
+    <a href="/gelinlerimiz" id="gelin-vsco-link">
+      <span class="gelin-vsco-wrap">
+        <span class="gelin-vsco-ghost" aria-hidden="true">Tüm Fotoğraflar</span>
+        <span class="gelin-vsco-label">Tüm Fotoğraflar</span>
+      </span>
+    </a>
+  </div>
+
+  <!-- ALT ORTA: logo + scroll -->
+  <div id="gelin-bottom-logo">
+    <div id="gelin-logo-core" style="display:grid; grid-template-columns:1fr auto 1fr; width:clamp(200px,30vw,360px); align-items:center; gap:0; line-height:1;">
+
+      <!-- Sol sütun: SONE üstte, BARAN altta -->
+      <div style="display:flex; flex-direction:column; align-items:flex-end;">
+        <span style="font-family:'Cinzel',serif; font-size:clamp(1.25rem,2.4vw,2rem); font-weight:600; letter-spacing:0.1em; line-height:1; display:block; color:#0A0A0A; margin-right:-0.1em;">SONE</span>
+        <span style="font-family:'Cinzel',serif; font-size:clamp(6.5px,0.6vw,9px); font-weight:700; letter-spacing:0.22em; margin-top:5px; line-height:1; white-space:nowrap; color:#0A0A0A; display:block;">BARAN</span>
+      </div>
+
+      <!-- Orta: ayraç -->
+      <span style="font-family:'Cinzel',serif; font-size:clamp(0.9rem,1.8vw,1.5rem); font-weight:200; line-height:1; padding:0 clamp(8px,1vw,14px); display:block; padding-bottom:3px; color:rgba(10,10,12,0.18);">|</span>
+
+      <!-- Sağ sütun: MODA üstte, BİLECELİ altta -->
+      <div style="display:flex; flex-direction:column; align-items:flex-start;">
+        <span style="font-family:'Cinzel',serif; font-size:clamp(1.25rem,2.4vw,2rem); font-weight:600; letter-spacing:0.1em; line-height:1; display:block; color:#0A0A0A; margin-left:-0.1em;">MODA</span>
+        <span style="font-family:'Cinzel',serif; font-size:clamp(6.5px,0.6vw,9px); font-weight:700; letter-spacing:0.22em; margin-top:5px; line-height:1; white-space:nowrap; color:#0A0A0A; display:block;">BİLECELİ</span>
+      </div>
+
+    </div>
+
+    <!-- Aşağı ok — Süreç'e geçiş tetikleyicisi -->
+    <div id="gelin-bottom-chevron" role="button" tabindex="0" aria-label="Aşağı kaydır" style="margin-top:clamp(9px,1.4vh,16px); display:flex; justify-content:center; cursor:pointer; pointer-events:auto; padding:8px 26px; z-index:24; position:relative;">
+      <div style="animation:gbl-bounce 2.3s ease-in-out infinite;">
+        <svg width="13" height="7" viewBox="0 0 13 7" fill="none"><path d="M1 1l5.5 5L12 1" stroke="rgba(10,10,12,0.42)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</section>
+
+<style>
+  /* ══ Grid — photos separated only by gap, no frames ══ */
+  #gelin-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    gap: 3px;
+    padding: clamp(20px,2.8vw,36px) clamp(20px,2.8vw,36px) clamp(100px,14vh,128px) clamp(20px,2.8vw,36px);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .gelin-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+  }
+
+  /* Hücre — sıfır padding, sıfır frame, fotoğraf tek başına ══ */
+  .gelin-cell {
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+    transform: none;
+    transition: opacity 0.35s ease;
+  }
+  .gelin-cell:hover { opacity: 0.88; }
+  .gelin-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Oranlar — 3 tip, sıra staggered ══ */
+  .gc-a { flex: 46; }
+  .gc-b { flex: 32; }
+  .gc-c { flex: 22; }
+
+
+  /* ══ Ghost başlık — arkada, beyaz, biraz daha büyük ══ */
+  .gelin-title-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .gelin-title-ghost {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.4rem,5vw,5rem);
+    font-weight: 500;
+    color: rgba(0,0,0,0.75);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    white-space: nowrap;
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* ══ Süreç CTA — grid dışı, ekran altı ══ */
+  #gelin-scroll-cta {
+    position: absolute;
+    bottom: clamp(6px,1vh,12px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.3s;
+    pointer-events: auto;
+    white-space: nowrap;
+  }
+  #gelin-scroll-label {
+    font-family: 'Cinzel', serif;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.46em;
+    text-transform: uppercase;
+    color: #0A0A0A;
+    transition: color 0.3s ease;
+  }
+  #gelin-scroll-cta:hover #gelin-scroll-label { color: rgba(10,10,12,0.6); }
+  #gelin-scroll-chevron { animation: gbl-bounce 2.3s ease-in-out infinite; }
+
+  /* ══ Başlık ══ */
+  #gelin-title-block {
+    position: absolute;
+    top: calc(var(--nav-h,68px) + clamp(83px,13vh,131px));
+    left: clamp(36px,5vw,72px);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(22px);
+    /* GELİNLERİMİZ, SONE MODA yerine oturduktan SONRA gelir */
+    transition: opacity 0.75s cubic-bezier(0.4,0,0.25,1) 0.44s,
+                transform 0.9s cubic-bezier(0.4,0,0.25,1) 0.44s;
+  }
+  #slide-gelinlerimiz.gelin-visible #gelin-title-block { opacity:1; transform:translateY(0); }
+
+  .gelin-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.4rem,5vw,5rem);
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  .gelin-rule {
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(195,38,56,0.9), transparent);
+    margin-top: 8px;
+    margin-left: clamp(10px,1.2vw,18px);
+    transition: width 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.18s;
+  }
+  #slide-gelinlerimiz.gelin-visible .gelin-rule { width: 56px; }
+
+  #gelin-vsco-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top: clamp(7px,1vh,12px);
+    margin-left: clamp(16px,1.9vw,30px);
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: auto;
+    transition: opacity 0.6s ease 0.78s, transform 0.6s ease 0.78s;
+  }
+  #slide-gelinlerimiz.gelin-visible #gelin-vsco-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #gelin-vsco-link:hover .gelin-vsco-wrap {
+    transform: scale(1.05);
+  }
+  .gelin-vsco-wrap {
+    position: relative;
+    display: inline-block;
+    transform-origin: left center;
+    transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .gelin-vsco-ghost {
+    display: none;
+  }
+  .gelin-vsco-label {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(14px, 1.15vw, 16px);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,1);
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.55), 1px 1px 0 rgba(0,0,0,0.6);
+  }
+
+  /* ══ Alt logo ══ */
+  #gelin-bottom-logo {
+    position: absolute;
+    bottom: clamp(12px,2vh,22px);
+    left: 50%;
+    /* Varsayılan: aşağıdan yükselerek gelir (navbar logosunun devamı gibi) */
+    transform: translateX(-50%) translateY(58px);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    opacity: 0;
+    /* SONE MODA önce oturur — gecikme 0.42s, süre 0.95s */
+    /* Sayfa yükselirken SENKRON — aynı eğri, aynı anda başlar */
+    transition: opacity 0.78s cubic-bezier(0.32,0,0.2,1) 0.02s,
+                transform 0.82s cubic-bezier(0.32,0,0.2,1) 0.02s;
+    pointer-events: auto;
+  }
+  #slide-gelinlerimiz.gelin-visible #gelin-bottom-logo {
+    opacity:1;
+    transform: translateX(-50%) translateY(0);
+  }
+  #slide-gelinlerimiz.gelin-visible #gelin-scroll-cta { opacity:1; }
+
+  .gbl-sub-row { display:flex; align-items:center; line-height:1; }
+  .gbl-sub-row,
+  .gbl-main-row {
+    position: relative;
+  }
+  .gbl-sub-row::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 2px; left: 2px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: clamp(7px,0.65vw,10px);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .gbl-main-row::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 2px; left: 2px;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: clamp(1.1rem,2.0vw,1.75rem);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .gbl-sub,
+  .gbl-divider-sub,
+  .gbl-main,
+  .gbl-divider-main { position: relative; z-index: 1; }
+  .gbl-sub {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(7px,0.65vw,10px);
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(10,10,12,0.95);
+    white-space: nowrap;
+  }
+  .gbl-divider-sub {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(8px,0.7vw,11px);
+    font-weight: 200;
+    color: rgba(10,10,12,0.55);
+    padding: 0 clamp(5px,0.5vw,9px);
+    line-height: 1;
+  }
+  .gbl-main-row { display:flex; align-items:center; line-height:1; margin-top:1px; }
+  .gbl-main {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.1rem,2.0vw,1.75rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #0A0A0A;
+    white-space: nowrap;
+  }
+  .gbl-divider-main {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.9rem,1.6vw,1.4rem);
+    font-weight: 200;
+    color: rgba(10,10,12,0.45);
+    padding: 0 clamp(7px,0.8vw,13px);
+    line-height: 1;
+    padding-bottom: 2px;
+  }
+
+  .gbl-scroll-cta {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .gbl-scroll-label {
+    font-family: 'Cinzel', serif;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.46em;
+    text-transform: uppercase;
+    color: #0A0A0A;
+    transition: color 0.3s ease;
+  }
+  .gbl-scroll-cta:hover .gbl-scroll-label { color: rgba(10,10,12,0.95); }
+  .gbl-scroll-chevron { animation: gbl-bounce 2.3s ease-in-out infinite; }
+  @keyframes gbl-bounce {
+    0%,100% { transform:translateY(0); }
+    50%      { transform:translateY(4px); }
+  }
+
+  /* Navbar gizle — çok yavaş, kademeli silikleşme ══ */
+  body.on-gelinlerimiz header#main-nav {
+    opacity:0 !important; pointer-events:none !important;
+    transition:opacity 0.7s cubic-bezier(0.4,0,0.25,1) !important;
+  }
+  body:not(.on-gelinlerimiz) header#main-nav {
+    opacity:1 !important; pointer-events:auto !important;
+    transition:opacity 0.85s cubic-bezier(0.4,0,0.25,1) !important;
+  }
+  body:not(.on-gelinlerimiz) #nav-left,
+  body:not(.on-gelinlerimiz) #nav-right { opacity:1 !important; pointer-events:auto !important; }
+
+  @media (max-width:767px) {
+    .gelin-col:nth-child(3), .gelin-col:nth-child(4) { display:none; }
+  }
+</style>
+
+<script>
+(function() {
+  /* Aşağı ok — tıklama & klavye ile Süreç slide'ına geçiş */
+  function bindChevron() {
+    var ch = document.getElementById('gelin-bottom-chevron');
+    if (!ch) { setTimeout(bindChevron, 150); return; }
+    function goSurec(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      if (window.pageSwiper) {
+        if (window._pageSwiperLock) window._pageSwiperLock();
+        window.pageSwiper.slideTo(3);
+      }
+    }
+    ch.addEventListener('click', goSurec);
+    ch.addEventListener('touchend', goSurec, { passive: false });
+    ch.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') goSurec(e);
+    });
+  }
+  bindChevron();
+
+  function initGelinSlide() {
+    if (!window.pageSwiper) { setTimeout(initGelinSlide, 100); return; }
+    var navbarTimer = null, visibleTimer = null;
+    window.pageSwiper.on('slideChange', function() {
+      var goingTo = this.activeIndex, comingFrom = this.previousIndex;
+      var slide = document.getElementById('slide-gelinlerimiz');
+      clearTimeout(navbarTimer); clearTimeout(visibleTimer);
+      if (goingTo === 2) {
+        /* Navbar zaten _gotoSlide pre-fade'inde sönmeye başladı. */
+        document.body.classList.add('on-gelinlerimiz');
+        if (slide) slide.classList.remove('gelin-out-up', 'gelin-out-down');
+        if (comingFrom === 1) {
+          /* on-collection'ı HEMEN kaldırma — yoksa yazı rengi siyah→beyaz
+             atlar ve navbar sönerken flash olur. Navbar görünmez olduktan
+             sonra kaldır, böylece renk değişimi hiç görünmez. */
+          navbarTimer = setTimeout(function() { document.body.classList.remove('on-collection'); }, 900);
+        }
+        visibleTimer = setTimeout(function() { if (slide) slide.classList.add('gelin-visible'); }, 120);
+      }
+      if (comingFrom === 2 && goingTo !== 2) {
+        /* Çıkış yönü — elementler sayfa ile aynı yöne süzülür */
+        if (slide) {
+          slide.classList.remove('gelin-out-up', 'gelin-out-down');
+          slide.classList.add(goingTo > 2 ? 'gelin-out-up' : 'gelin-out-down');
+        }
+        /* Navbar geç ve çok yumuşak belirsin, sayfa ile aynı yönde süzülsün.
+           Koleksiyona dönüş 520ms, Süreç'e geçiş 720ms sonra başlar. */
+        /* İLERİ (aşağı): navbar ÖNCE otursun → kısa gecikme.
+           GERİ (yukarı): elementler önce, navbar EN SON → uzun gecikme. */
+        /* İLERİ (Süreç'e): önce SAYFA otursun (geçiş ~650ms), sonra navbar.
+           GERİ (Koleksiyon'a): elementler önce, navbar en son. */
+        var revealAfter = (goingTo > 2) ? 660 : 520;
+        /* Koleksiyon'a (yukarı) dönüşte navbar YUKARIDAN aşağı yerine
+           oturur; Süreç'e (aşağı) inişte aşağıdan yükselir. */
+        navbarTimer = setTimeout(function() {
+          if (window._revealNav) window._revealNav(goingTo > 2 ? 'below' : 'above');
+          else document.body.classList.remove('on-gelinlerimiz');
+        }, revealAfter);
+        if (slide) slide.classList.remove('gelin-visible');
+      }
+    });
+    window.pageSwiper.on('slideChangeTransitionEnd', function() {
+      var isActive = (this.activeIndex === 2);
+      var slide = document.getElementById('slide-gelinlerimiz');
+      /* Gelinlerimiz'den çıkarken navbar'ı burada geri getirme —
+         navbarTimer yumuşak/gecikmeli girişi yönetiyor. */
+      if (isActive) document.body.classList.add('on-gelinlerimiz');
+      if (slide) {
+        slide.classList.toggle('gelin-visible', isActive);
+        if (!isActive) {
+          /* Geçiş bitti — çıkış sınıflarını temizle ki bir sonraki giriş
+             yön kuralına göre doğru taraftan başlasın */
+          setTimeout(function() {
+            slide.classList.remove('gelin-out-up', 'gelin-out-down');
+          }, 120);
+        }
+      }
+    });
+    var isActive = (window.pageSwiper.activeIndex === 2);
+    document.body.classList.toggle('on-gelinlerimiz', isActive);
+    var slide = document.getElementById('slide-gelinlerimiz');
+    if (slide) slide.classList.toggle('gelin-visible', isActive);
+  }
+  initGelinSlide();
+})();
+</script>
+</div><!-- /slide gelinlerimiz -->
+
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SÜREÇ SLIDE — Düşten Gerçeğe · Slide index: 3
+════════════════════════════════════════════════════════ -->
+<div class="swiper-slide slide-fullscreen" id="slide-surec">
+<section id="surec" style="position:absolute;inset:0;overflow:hidden;background:#000;">
+
+  <!-- Video arka plan -->
+  <div style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;">
+    <video id="surec-video" src="" autoplay muted loop playsinline
+      style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);pointer-events:none;opacity:0;transition:opacity 2s ease;object-fit:cover;"
+      title="Bileceli Bridal Süreç"></video>
+  </div>
+
+  <!-- Vinyette + derinlik katmanı -->
+  <div style="position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:
+      radial-gradient(ellipse 75% 75% at 50% 50%, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.65) 100%),
+      linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.08) 65%, rgba(0,0,0,0.7) 100%);
+  "></div>
+
+  <!-- Üst altın çizgi -->
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;z-index:3;pointer-events:none;
+    background:linear-gradient(90deg,transparent,rgba(212,175,55,0.28) 20%,rgba(212,175,55,0.55) 50%,rgba(212,175,55,0.28) 80%,transparent);"></div>
+
+  /* Ana içerik */
+  <div id="surec-inner" style="position:absolute;inset:0;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 clamp(28px,5vw,80px);box-sizing:border-box;pointer-events:none;">
+
+    <!-- Eyebrow -->
+    <div class="sv-fi" id="sv-eyebrow" style="display:flex;align-items:center;gap:14px;margin-bottom:clamp(12px,1.8vh,20px);">
+      <span style="display:block;width:24px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.22));"></span>
+      <span style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:0.54em;color:rgba(255,255,255,0.32);text-transform:uppercase;">Atölye Süreci</span>
+      <span style="display:block;width:24px;height:1px;background:linear-gradient(270deg,transparent,rgba(255,255,255,0.22));"></span>
+    </div>
+
+    <!-- Başlık -->
+    <h2 class="sv-fi" id="sv-title" style="font-family:'Cinzel',serif;font-size:clamp(1.5rem,3.4vw,3.2rem);font-weight:500;font-style:normal;color:rgba(255,255,255,0.88);letter-spacing:0.06em;line-height:1.1;margin:0 0 clamp(6px,1vh,12px);text-align:center;text-shadow:0 2px 40px rgba(0,0,0,0.8);">Sizinle Başlayan Tasarım</h2>
+
+    <!-- Rule -->
+    <div class="sv-fi" id="sv-rule-wrap" style="margin-bottom:clamp(32px,6vh,64px);overflow:hidden;">
+      <div id="sv-rule"></div>
+    </div>
+
+    <!-- TİMELİNE -->
+    <div id="sv-tl" class="sv-fi">
+
+    <!-- Bağlantı çizgileri — her halkanın sağından sonraki halkanın soluna -->
+
+      <div id="sv-steps">
+
+        <div class="sv-step" data-si="0" style="--si:0">
+          <div class="sv-dot-ring">
+            <div class="sv-dot"><span class="sv-num">01</span><div class="sv-dot-pulse"></div></div>
+          </div>
+          <div class="sv-label">Randevu</div>
+          <div class="sv-sub">İlk temas</div>
+        </div>
+
+        <div class="sv-connector" style="--ci:0"></div>
+
+        <div class="sv-step" data-si="1" style="--si:1">
+          <div class="sv-dot-ring">
+            <div class="sv-dot"><span class="sv-num">02</span><div class="sv-dot-pulse"></div></div>
+          </div>
+          <div class="sv-label">Keşif</div>
+          <div class="sv-sub">Önce sizi dinliyoruz</div>
+        </div>
+
+        <div class="sv-connector" style="--ci:1"></div>
+
+        <div class="sv-step" data-si="2" style="--si:2">
+          <div class="sv-dot-ring">
+            <div class="sv-dot"><span class="sv-num">03</span><div class="sv-dot-pulse"></div></div>
+          </div>
+          <div class="sv-label">Tasarım</div>
+          <div class="sv-sub">Henüz kimse görmedi</div>
+        </div>
+
+        <div class="sv-connector" style="--ci:2"></div>
+
+        <div class="sv-step" data-si="3" style="--si:3">
+          <div class="sv-dot-ring">
+            <div class="sv-dot"><span class="sv-num">04</span><div class="sv-dot-pulse"></div></div>
+          </div>
+          <div class="sv-label">Dikim</div>
+          <div class="sv-sub">Sizin için işleniyor</div>
+        </div>
+
+        <div class="sv-connector" style="--ci:3"></div>
+
+        <div class="sv-step" data-si="4" style="--si:4">
+          <div class="sv-dot-ring">
+            <div class="sv-dot"><span class="sv-num">05</span><div class="sv-dot-pulse"></div></div>
+          </div>
+          <div class="sv-label">Prova Süreci</div>
+          <div class="sv-sub">Adım adım size yaklaşıyor</div>
+        </div>
+
+        <div class="sv-connector" style="--ci:4"></div>
+
+        <div class="sv-step" data-si="5" style="--si:5">
+          <div class="sv-dot-ring">
+            <div class="sv-dot sv-dot-last"><span class="sv-num">06</span><div class="sv-dot-pulse"></div></div>
+          </div>
+          <div class="sv-label">Teslimat</div>
+          <div class="sv-sub">Sahne artık sizin</div>
+        </div>
+
+      </div><!-- /sv-steps -->
+    </div><!-- /sv-tl -->
+
+  </div><!-- /surec-inner -->
+
+  <!-- ALT ORTA: Randevu + devam oku (ortalanmış blok) -->
+  <div id="sv-bottom" class="sv-fi-group">
+    <button class="sv-cta" id="sv-cta" type="button"
+      onclick="event.stopPropagation();if(window._gotoSlide)window._gotoSlide(4);else if(window.pageSwiper)window.pageSwiper.slideTo(4);">
+      <span class="sv-cta-inner">
+        <span>Randevu</span>
+      </span>
+    </button>
+    <div id="sv-down" onclick="if(window._gotoSlide)window._gotoSlide(4);else if(window.pageSwiper)window.pageSwiper.slideTo(4);"
+      style="display:flex;flex-direction:column;align-items:center;cursor:pointer;user-select:none;padding:6px 22px;">
+      <div style="animation:sv-bounce 2.4s ease-in-out infinite;">
+        <svg width="22" height="13" viewBox="0 0 22 13" fill="none"><path d="M1 1.5l10 9 10-9" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* Navbar koyu */
+  body.on-surec:not(.on-hakkimizda) header#main-nav::before { background:rgba(0,0,0,0)!important; backdrop-filter:blur(0px)!important; -webkit-backdrop-filter:blur(0px)!important; }
+  body.on-surec:not(.on-hakkimizda) header#main-nav { box-shadow:none!important; }
+  body.on-surec:not(.on-hakkimizda) header#main-nav .nav-item     { color:rgba(255,255,255,0.65)!important; }
+  body.on-surec:not(.on-hakkimizda) header#main-nav .logo-text    { color:rgba(255,255,255,0.85)!important; }
+  body.on-surec:not(.on-hakkimizda) header#main-nav .logo-divider { color:rgba(255,255,255,0.12)!important; }
+  body.on-surec:not(.on-hakkimizda) header#main-nav .logo-subtext { color:rgba(255,255,255,0.42)!important; text-shadow:0 1px 8px rgba(0,0,0,0.7)!important; }
+  body.on-surec:not(.on-hakkimizda) header#main-nav .menu-btn     { color:rgba(255,255,255,0.75)!important; }
+  body.on-surec:not(.on-hakkimizda) header#main-nav .nav-item:hover { opacity:0.45!important; }
+  body.on-surec:not(.on-hakkimizda) .nav-cta .nav-cta-inner { color:rgba(212,175,55,0.65)!important; border-color:rgba(212,175,55,0.32)!important; }
+  body.on-surec:not(.on-hakkimizda) .cpag-bullet       { background:rgba(255,255,255,0.18)!important; }
+  body.on-surec:not(.on-hakkimizda) .cpag-bullet:hover { background:rgba(255,255,255,0.5)!important; }
+  body.on-surec:not(.on-hakkimizda) .cpag-bullet.active{ background:rgba(255,255,255,0.82)!important; }
+
+  #slide-surec { background:#000!important; }
+
+  @keyframes sv-bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(5px);} }
+
+  /* Fade-in sistem — sıra: eyebrow → title → rule → (navbar ~800ms) → timeline → cta */
+  /* GİRİŞ (aşağı doğru): navbar → başlık → içerik → randevu
+     ÇIKIŞ (yukarı doğru): randevu → içerik → başlık → navbar
+     Elementler navbar ile AYNI yöne kayar. */
+  .sv-fi {
+    opacity:0;
+    transition:opacity 0.6s cubic-bezier(0.4,0,0.25,1),
+               transform 0.7s cubic-bezier(0.4,0,0.25,1);
+  }
+  /* Yön: ileri (aşağı iniyoruz) → yukarıdan gelir; geri → aşağıdan gelir */
+  .sv-fi { transform:translateY(14px); }
+
+  /* Giriş sırası — üstten aşağı */
+  #sv-eyebrow  { transition-delay:0.20s; }
+  #sv-title    { transition-delay:0.26s; }
+  #sv-rule-wrap{ transition-delay:0.34s; }
+  #sv-tl       { transition-delay:0.44s; }
+  #sv-bottom   { transition-delay:0.60s; }
+  /* Çıkış sırası — alttan yukarı (ters) */
+  #slide-surec:not(.surec-visible) #sv-bottom { transition-delay:0s; }
+  #slide-surec:not(.surec-visible) #sv-tl        { transition-delay:0.08s; }
+  #slide-surec:not(.surec-visible) #sv-rule-wrap { transition-delay:0.16s; }
+  #slide-surec:not(.surec-visible) #sv-title     { transition-delay:0.24s; }
+  #slide-surec:not(.surec-visible) #sv-eyebrow   { transition-delay:0.32s; }
+  #slide-surec:not(.surec-visible) .sv-fi { transition-duration:0.42s; }
+
+  #sv-cta { transition-delay:0s; }
+  #slide-surec.surec-visible .sv-fi { opacity:1; transform:translateY(0); }
+
+  #sv-rule {
+    width:0; height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.22),transparent);
+    transition:width 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.60s;
+  }
+  #slide-surec.surec-visible #sv-rule { width:56px; }
+
+  #sv-down { opacity:0; transition:opacity 0.5s ease 3.33s; }
+  #slide-surec:not(.surec-visible) #sv-down { transition-delay:0s !important; }
+  #slide-surec.surec-visible #sv-down { opacity:1; }
+
+  /* TİMELİNE */
+  #sv-tl { position:relative; width:100%; max-width:1100px; }
+
+  /* ── CONNECTOR — track her zaman görünür, fill loading efektiyle soldan sağa ── */
+  .sv-connector {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.35); /* track — her zaman mevcut */
+    align-self: flex-start;
+    margin-top: 19px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1px;
+  }
+  /* Fill — her connector solundaki step belirdikten ~80ms sonra başlıyor */
+  .sv-connector::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; height: 100%; width: 0%;
+    background: linear-gradient(90deg,
+      rgba(255,255,255,0.80) 0%,
+      rgba(255,255,255,0.50) 70%,
+      rgba(255,255,255,0.15) 100%);
+    transition: width 0s;
+  }
+  #slide-surec.surec-visible .sv-connector::after {
+    width: 100%;
+    /* step_i 0.86s+i*0.10s → connector_i başlangıcı: 0.96s + i*0.10s */
+    transition: width 0.42s cubic-bezier(0.25,0.46,0.45,0.94)
+                calc(0.96s + var(--ci,0) * 0.10s);
+  }
+
+  #sv-steps {
+    display:flex; align-items:flex-start; justify-content:space-between;
+    position:relative; z-index:1;
+  }
+
+  /* Adımlar: merdiven efekti — 1. halka az mesafeden, 6. halka en aşağıdan */
+  .sv-step {
+    flex:1; display:flex; flex-direction:column; align-items:center;
+    opacity:0;
+    /* Her adımın başlangıç pozisyonu farklı — sıra numarası arttıkça daha aşağıda */
+    transform: translateY(calc(18px + var(--si,0) * 18px));
+    transition:
+      opacity  0.45s cubic-bezier(0.22,1,0.36,1) calc(0.86s + var(--si,0) * 0.13s),
+      transform 0.52s cubic-bezier(0.22,1,0.36,1) calc(0.86s + var(--si,0) * 0.13s);
+  }
+  #slide-surec.surec-visible .sv-step { opacity:1; transform:translateY(0); }
+
+  .sv-dot-ring {
+    width:40px; height:40px;
+    display:flex; align-items:center; justify-content:center;
+    position:relative; z-index:2;
+    margin-bottom:14px;
+    background:transparent;
+    border-radius:50%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .sv-dot {
+    width:38px; height:38px; border-radius:50%;
+    border:1px solid rgba(255,255,255,0.45);
+    background:transparent;
+    display:flex; align-items:center; justify-content:center;
+    position:relative; z-index:3;
+    transition: border-color 0.5s ease, background 0.5s ease, box-shadow 0.5s ease;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+  }
+  .sv-dot-last { border-color:rgba(255,255,255,0.70)!important; }
+  .sv-dot-last .sv-num { color:rgba(255,255,255,0.90)!important; }
+
+  .sv-step:hover .sv-dot {
+    border-color:rgba(255,255,255,0.80);
+    background:rgba(255,255,255,0.06);
+    box-shadow:0 0 0 7px rgba(255,255,255,0.04), 0 0 28px rgba(255,255,255,0.10);
+  }
+
+  /* Komşu ripple classları (JS tarafından eklenir) */
+  .sv-step.sv-ripple .sv-dot {
+    border-color:rgba(255,255,255,0.55);
+    box-shadow:0 0 0 4px rgba(255,255,255,0.04);
+  }
+  .sv-step.sv-ripple-far .sv-dot { border-color:rgba(255,255,255,0.35); }
+  .sv-step.sv-ripple-far2 .sv-dot { border-color:rgba(255,255,255,0.20); }
+
+  /* Hover & click için pointer events */
+  #sv-tl, #sv-cta, #sv-down { pointer-events: auto; }
+  .sv-step { pointer-events: auto; outline:none; cursor:default; }
+
+  .sv-num {
+    font-family:'Cinzel',serif; font-size:8px; font-weight:600; letter-spacing:0.1em;
+    color:rgba(255,255,255,0.90); position:relative; z-index:1;
+    transition:color 0.4s ease;
+  }
+  .sv-step:hover .sv-num        { color:rgba(255,255,255,1); }
+  .sv-step.sv-ripple .sv-num    { color:rgba(255,255,255,0.75); }
+
+  /* Pulse halkası — hover */
+  .sv-dot-pulse {
+    position:absolute; inset:-1px; border-radius:50%;
+    border:1px solid transparent; pointer-events:none;
+  }
+  .sv-step:hover .sv-dot-pulse {
+    animation:sv-pulse-ring 1.5s cubic-bezier(0.4,0,0.6,1) forwards;
+  }
+  @keyframes sv-pulse-ring {
+    0%   { border-color:rgba(255,255,255,0.0); transform:scale(1); }
+    28%  { border-color:rgba(255,255,255,0.48); }
+    75%  { border-color:rgba(255,255,255,0.1); transform:scale(1.6); }
+    100% { border-color:rgba(255,255,255,0.0); transform:scale(1.9); }
+  }
+
+  /* Komşu ripple animasyonu */
+  @keyframes sv-ripple-nb {
+    0%   { border-color:rgba(255,255,255,0.0); transform:scale(1); }
+    38%  { border-color:rgba(255,255,255,0.2); transform:scale(1.28); }
+    100% { border-color:rgba(255,255,255,0.0); transform:scale(1.55); }
+  }
+  .sv-step.sv-ripple .sv-dot-pulse {
+    animation:sv-ripple-nb 1.3s cubic-bezier(0.4,0,0.6,1) 0.1s forwards;
+  }
+  .sv-step.sv-ripple-far .sv-dot-pulse {
+    animation:sv-ripple-nb 1.1s cubic-bezier(0.4,0,0.6,1) 0.2s forwards;
+  }
+
+  .sv-label {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(11px,1.05vw,13.5px); font-weight:400;
+    color:rgba(255,255,255,0.58); letter-spacing:0.03em;
+    text-align:center; margin-bottom:6px;
+    transition:color 0.4s ease;
+  }
+  .sv-step:hover .sv-label  { color:rgba(255,255,255,0.88); }
+  .sv-step.sv-ripple .sv-label { color:rgba(255,255,255,0.68); }
+
+  .sv-sub {
+    font-family:'Manrope',sans-serif;
+    font-size:clamp(8.5px,0.62vw,10px); font-weight:300;
+    color:rgba(255,255,255,0.18); letter-spacing:0.04em; line-height:1.5;
+    text-align:center; padding:0 clamp(2px,0.4vw,6px);
+    transition:color 0.4s ease;
+  }
+  .sv-step:hover .sv-sub { color:rgba(255,255,255,0.36); }
+
+  /* CTA */
+  #sv-bottom {
+    position:absolute; bottom:clamp(14px,2.2vh,24px);
+    left:0; right:0; width:100%;
+    z-index:12; display:flex; flex-direction:column; align-items:center;
+    gap:clamp(6px,1vh,12px);
+    pointer-events:none;
+    opacity:0;
+    transition:opacity 0.6s cubic-bezier(0.4,0,0.25,1),
+               transform 0.7s cubic-bezier(0.4,0,0.25,1);
+  }
+  #sv-bottom > * { pointer-events:auto; }
+  #sv-bottom { transform:translateY(14px); }
+  #slide-surec.surec-visible #sv-bottom { opacity:1; transform:translateY(0); }
+  .sv-cta { display:inline-flex; background:none; border:none; padding:0; cursor:pointer; margin-top:0; pointer-events:auto; }
+  .sv-cta-inner {
+    display:inline-flex; align-items:center; gap:16px;
+    font-family:'Cinzel',serif; font-size:11px; font-weight:900;
+    letter-spacing:0.16em; text-transform:uppercase;
+    padding:2px 0;
+    position:relative;
+    /* Gradient: beyaz kenarlar → hafif kırmızı flash → beyaz kenarlar (ters) */
+    background: linear-gradient(
+      90deg,
+      rgb(255,255,255)   0%,
+      rgb(200,100,110)  28%,
+      rgb(160,80,90)    46%,
+      rgb(200,100,110)  64%,
+      rgb(255,255,255) 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Hafif kırmızı flash sağdan sola hareket ediyor — seamless loop */
+    animation: sv-breath-reverse 8.25s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+    /* Daha hafif kırmızı glow */
+    filter: drop-shadow(0 0 4px rgba(180,70,80,0.25));
+  }
+  @keyframes sv-breath-reverse {
+    0%   { background-position: 0% center;   filter:drop-shadow(0 0 3px rgba(180,70,80,0.15)); }
+    100% { background-position: 300% center; filter:drop-shadow(0 0 10px rgba(200,100,110,0.45)); }
+    /* Dalgalanma animasyonu — glow nefes alır gibi */
+    animation: sv-breath-glow 8.25s linear infinite;
+  }
+  @keyframes sv-breath-glow {
+    0%   { filter:drop-shadow(0 0 4px rgba(200,38,56,0.28)); }
+    25%  { filter:drop-shadow(0 0 16px rgba(230,55,75,0.80)); }
+    50%  { filter:drop-shadow(0 0 4px rgba(200,38,56,0.28)); }
+    75%  { filter:drop-shadow(0 0 16px rgba(230,55,75,0.80)); }
+    100% { filter:drop-shadow(0 0 4px rgba(200,38,56,0.28)); }
+  }
+  .sv-cta:hover .sv-cta-inner {
+    letter-spacing:0.22em;
+    animation-duration: 8.25s;
+  }
+
+  /* Responsive */
+  @media (max-width:680px) {
+    #sv-line-track { display:none; }
+    #sv-steps { flex-wrap:wrap; justify-content:center; }
+    .sv-step { flex:0 0 33.33%; padding:0 4px; }
+    .sv-sub  { display:none; }
+    .sv-label { font-size:11px; }
+  }
+  @media (max-width:380px) {
+    .sv-step { flex:0 0 50%; }
+  }
+</style>
+
+<script>
+(function(){
+  var loaded = false;
+  function loadVideo(){
+    if(loaded)return; loaded=true;
+    var f=document.getElementById('surec-video');
+    if(!f)return;
+    f.loop=true;
+    f.src='assets/surec.mp4';
+    f.addEventListener('loadeddata',function(){ setTimeout(function(){f.style.opacity='1';},700); });
+    /* loop attribute'u destekleyen tarayıcılarda yeterli olur;
+       yine de garanti için bitince başa sar */
+    f.addEventListener('ended',function(){ f.currentTime=0; f.play().catch(function(){}); });
+    f.play().catch(function(){});
+    setTimeout(function(){f.style.opacity='1';},5000);
+  }
+
+  function initRipple(){
+    var steps=Array.from(document.querySelectorAll('.sv-step'));
+    var rippleTimers=[];
+
+    function clearRippleTimers(){
+      rippleTimers.forEach(function(t){clearTimeout(t);});
+      rippleTimers=[];
+    }
+
+    steps.forEach(function(el,i){
+      /* Outline/focus highlight kaldır — mavi rengi önler */
+      el.style.outline='none';
+      el.addEventListener('focus',function(){this.style.outline='none';});
+
+      el.addEventListener('mouseenter',function(){
+        /* Tüm ripple sınıflarını anında temizle */
+        clearRippleTimers();
+        steps.forEach(function(s){s.classList.remove('sv-ripple','sv-ripple-far','sv-ripple-far2');});
+
+        /* 1. halka — 90ms gecikme ile yayıl */
+        if(steps[i-1]||steps[i+1]){
+          rippleTimers.push(setTimeout(function(){
+            if(steps[i-1]) steps[i-1].classList.add('sv-ripple');
+            if(steps[i+1]) steps[i+1].classList.add('sv-ripple');
+          },90));
+        }
+        /* 2. halka — 200ms gecikme */
+        if(steps[i-2]||steps[i+2]){
+          rippleTimers.push(setTimeout(function(){
+            if(steps[i-2]) steps[i-2].classList.add('sv-ripple-far');
+            if(steps[i+2]) steps[i+2].classList.add('sv-ripple-far');
+          },200));
+        }
+        /* 3. halka — 310ms gecikme */
+        if(steps[i-3]||steps[i+3]){
+          rippleTimers.push(setTimeout(function(){
+            if(steps[i-3]) steps[i-3].classList.add('sv-ripple-far2');
+            if(steps[i+3]) steps[i+3].classList.add('sv-ripple-far2');
+          },310));
+        }
+      });
+
+      el.addEventListener('mouseleave',function(){
+        clearRippleTimers();
+        setTimeout(function(){
+          steps.forEach(function(s){s.classList.remove('sv-ripple','sv-ripple-far','sv-ripple-far2');});
+        },280);
+      });
+    });
+  }
+
+  function initSurec(){
+    if(!window.pageSwiper){setTimeout(initSurec,100);return;}
+    var slide=document.getElementById('slide-surec');
+    var onSurecTimer=null;
+
+    function on(fromBelow){
+      loadVideo();
+      clearTimeout(onSurecTimer);
+      if(fromBelow){
+        /* Hakkımızda'dan yukarı gelinince: tamamlanmış hali koru, animasyon yok */
+        if(slide) slide.classList.add('surec-visible');
+      } else {
+        /* Yukarıdan (gelinlerimiz vb.) aşağı gelinince:
+           SAYFA OTURANA kadar bekle (geçiş ~650ms) + navbar başlasın,
+           sonra elementler sırayla gelsin. Böylece flash olmaz. */
+        if(slide) slide.classList.remove('surec-visible');
+        clearTimeout(window._surecRevealTimer);
+        window._surecRevealTimer = setTimeout(function(){
+          if(slide) slide.classList.add('surec-visible');
+        }, 700);
+      }
+      /* Navbar */
+      onSurecTimer=setTimeout(function(){
+        document.body.classList.add('on-surec');
+      },660);
+    }
+    function off(goingTo){
+      clearTimeout(onSurecTimer);
+      document.body.classList.remove('on-surec');
+      if(goingTo===4||goingTo===5){
+        /* Randevu / Hakkımızda'ya gidiyoruz — surec-visible kalsın */
+      } else {
+        /* Yukarı çıkıyoruz — bir sonraki girişte animasyon baştan oynsun diye sıfırla */
+        if(slide) slide.classList.remove('surec-visible');
+      }
+      /* Gelinlerimiz'e gidiyorsak navbar çok hızlı kaybolsun */
+      if(goingTo===2){
+        document.body.classList.add('nav-instant-hide');
+        document.body.classList.add('on-gelinlerimiz');
+        setTimeout(function(){
+          document.body.classList.remove('nav-instant-hide');
+        },400);
+      }
+    }
+    window.pageSwiper.on('slideChange',function(){
+      if(this.activeIndex===3){
+        var fromBelow = this.previousIndex > 3;
+        on(fromBelow);
+      } else off(this.activeIndex);
+    });
+    window.pageSwiper.on('slideChangeTransitionEnd',function(){
+      var a=this.activeIndex===3;
+      if(!a) document.body.classList.remove('on-surec');
+      /* surec-visible: hakkımızda'ya gidince bırak, başka yerlere gidince kaldır */
+      if(slide && !a && this.activeIndex!==4 && this.activeIndex!==5) slide.classList.remove('surec-visible');
+      if(a) adjustConnectors();
+    });
+    if(window.pageSwiper.activeIndex===3)on();
+    initRipple();
+    adjustConnectors();
+    window.addEventListener('resize',adjustConnectors,{passive:true});
+  }
+
+  /* Connector çizgilerini halkalara tam değdirmek için negatif margin hesapla */
+  function adjustConnectors(){
+    var steps=document.querySelectorAll('#sv-steps .sv-step');
+    var conns=document.querySelectorAll('#sv-steps .sv-connector');
+    if(!steps.length||!conns.length)return;
+    var stepW=steps[0].getBoundingClientRect().width;
+    var margin=-(stepW/2-20);
+    conns.forEach(function(c){
+      c.style.marginLeft=margin+'px';
+      c.style.marginRight=margin+'px';
+    });
+  }
+
+  initSurec();
+})();
+</script>
+
+</div><!-- /slide surec -->
+
+
+
+
+
+<!-- ═══════════════════════════════════════════════════════
+     RANDEVU SLIDE — Takvim + İletişim · Slide index: 4
+════════════════════════════════════════════════════════ -->
+<div class="swiper-slide slide-fullscreen" id="slide-randevu">
+<section id="randevu" class="rv-step-0">
+
+  <div class="rv-wrap">
+
+    <!-- ═══ SOL: Başlık + Takvim ═══ -->
+    <div class="rv-left">
+
+      <div class="rv-head" id="rv-head">
+        <div class="rv-eyebrow">
+          <span class="rv-eyebrow-ln"></span>
+          <span class="rv-eyebrow-tx">Prova Randevusu</span>
+        </div>
+        <h2 class="rv-title">Bir Tarih Seçin</h2>
+      </div>
+
+      <div class="rv-cal">
+        <div class="rv-cal-bar">
+          <button class="rv-nav" id="rv-prev" type="button" aria-label="Önceki ay">
+            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"><path d="M6 1L1 5.5 6 10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="rv-month" id="rv-month">—</span>
+          <button class="rv-nav" id="rv-next" type="button" aria-label="Sonraki ay">
+            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"><path d="M1 1l5 4.5L1 10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="rv-grid" id="rv-grid" role="grid" aria-label="Takvim"></div>
+      </div>
+
+    </div>
+
+    <!-- ═══ SAĞ: İletişim ═══ -->
+    <div class="rv-right">
+      <div class="rv-form">
+
+        <p class="rv-form-lead" id="rv-lead">Önce bir tarih seçin.</p>
+
+        <div class="rv-fields" id="rv-fields">
+          <div class="rv-field rv-f1">
+            <label class="rv-label" for="f-name">Ad Soyad</label>
+            <input class="rv-input" id="f-name" type="text" autocomplete="name" />
+          </div>
+          <div class="rv-field rv-f2">
+            <label class="rv-label" for="f-phone">Telefon</label>
+            <input class="rv-input" id="f-phone" type="tel" autocomplete="tel" />
+          </div>
+          <div class="rv-field rv-f3">
+            <label class="rv-label" for="f-email">E-posta</label>
+            <input class="rv-input" id="f-email" type="email" autocomplete="email" />
+          </div>
+          <button class="rv-submit rv-f4" id="contact-submit" type="button">
+            <span class="rv-submit-lb">Randevu Talebi Gönder</span>
+          </button>
+          <p class="rv-note rv-f4">Talebiniz WhatsApp üzerinden iletilir; onay için sizi ararız.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Aşağı kaydırma oku -->
+  <div class="rv-down" id="rv-down" role="button" tabindex="0" aria-label="Aşağı kaydır">
+    <div class="rv-down-ico">
+      <svg width="13" height="7" viewBox="0 0 13 7" fill="none"><path d="M1 1l5.5 5L12 1" stroke="rgba(10,10,12,0.42)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* ══════════════════════════════════════════════
+     RANDEVU — ferah takvim + iletişim
+     Adımlar: 0 = başlık + takvim · 1 = başlık kalkar, takvim yukarı
+     Tarih seçilince sağ taraftaki alanlar animasyonla gelir.
+  ══════════════════════════════════════════════ */
+  #slide-randevu { background:#FAFAF8; }
+  #randevu {
+    position:absolute; inset:0;
+    background:#FAFAF8;
+    overflow:hidden;
+    box-sizing:border-box;
+  }
+
+  .rv-wrap {
+    position:absolute; inset:0;
+    padding-top: calc(var(--nav-h,68px) + clamp(14px,2.2vh,30px));
+    padding-bottom: clamp(52px,7vh,84px);   /* aşağı ok için yer */
+    padding-left: clamp(36px,6vw,104px);
+    padding-right: clamp(36px,6vw,104px);
+    box-sizing:border-box;
+    display:grid;
+    grid-template-columns: minmax(0,1.3fr) minmax(0,1fr);
+    gap: clamp(34px,5vw,86px);
+    align-items:start;
+    z-index:3;
+  }
+
+  .rv-left { position:relative; min-width:0; display:flex; flex-direction:column; }
+
+  /* ── Başlık: 1. adımda yukarı kayıp kaybolur ── */
+  .rv-head {
+    transition: transform 1.0s cubic-bezier(0.4,0,0.25,1),
+                opacity   0.7s cubic-bezier(0.4,0,0.25,1),
+                max-height 1.0s cubic-bezier(0.4,0,0.25,1),
+                margin-bottom 1.0s cubic-bezier(0.4,0,0.25,1);
+    will-change: transform, opacity;
+    max-height: 140px;
+    overflow: hidden;
+    margin-bottom: clamp(16px,2.6vh,30px);
+  }
+  #randevu.rv-step-1 .rv-head {
+    transform: translateY(-26px);
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+    pointer-events: none;
+  }
+
+  .rv-eyebrow { display:flex; align-items:center; gap:12px; margin-bottom:clamp(9px,1.4vh,16px); }
+  .rv-eyebrow-ln { display:block; width:26px; height:1px; background:rgba(10,10,12,0.22); }
+  .rv-eyebrow-tx {
+    font-family:'Cinzel',serif; font-size:8px; font-weight:500;
+    letter-spacing:0.44em; text-transform:uppercase; color:rgba(10,10,12,0.42);
+  }
+  .rv-title {
+    font-family:'Cinzel',serif;
+    font-size:clamp(1.6rem,2.9vw,2.6rem); font-weight:500;
+    color:#0A0A0A; letter-spacing:0.03em; line-height:1.08; margin:0;
+  }
+
+  /* ── TAKVİM ── */
+  .rv-cal { position:relative; }
+
+  .rv-cal-bar {
+    display:flex; align-items:center; gap:16px;
+    margin-bottom: clamp(10px,1.5vh,17px);
+  }
+  .rv-month {
+    font-family:'Cinzel',serif; font-size:11px; font-weight:600;
+    letter-spacing:0.2em; text-transform:uppercase; color:#0A0A0A;
+    min-width:11ch;
+  }
+  .rv-nav {
+    background:none; border:none; padding:6px 4px; cursor:pointer;
+    color:rgba(10,10,12,0.34); line-height:0;
+    transition:color 0.35s ease;
+  }
+  .rv-nav:hover { color:rgba(10,10,12,0.78); }
+  .rv-nav:disabled { opacity:0.2; cursor:default; }
+
+  /* "#" ızgarası: hücre sol+üst, kapsayıcı sağ+alt → çerçeve tam kapanır */
+  .rv-grid {
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    border-right:1px solid rgba(10,10,12,0.075);
+    border-bottom:1px solid rgba(10,10,12,0.075);
+  }
+  .rv-cell {
+    position:relative;
+    border-left:1px solid rgba(10,10,12,0.075);
+    border-top:1px solid rgba(10,10,12,0.075);
+    aspect-ratio: 1 / 0.78;
+    display:flex; align-items:center; justify-content:center;
+    background:none; padding:0; margin:0;
+    font-family:'Manrope',sans-serif;
+    font-size:clamp(12px,0.92vw,15px); font-weight:400;
+    color:#0A0A0A;
+    transition: background 0.45s cubic-bezier(0.4,0,0.25,1), color 0.4s ease;
+  }
+  button.rv-cell {
+    cursor:pointer; font-family:'Manrope',sans-serif;
+    border-right:0; border-bottom:0;
+    -webkit-appearance:none; appearance:none;
+    touch-action:manipulation;
+    pointer-events:auto !important;
+  }
+  .rv-wrap, .rv-left, .rv-cal, .rv-grid { pointer-events:auto; }
+  .rv-cell.rv-head-cell {
+    aspect-ratio:auto; padding:clamp(8px,1.2vh,13px) 0;
+    font-family:'Cinzel',serif; font-size:8px; font-weight:600;
+    letter-spacing:0.24em; text-transform:uppercase;
+    color:rgba(10,10,12,0.34);
+  }
+  .rv-cell.rv-past { color:rgba(10,10,12,0.19); }
+  button.rv-cell:hover { background:rgba(10,10,12,0.035); }
+  .rv-cell.rv-today::after {
+    content:''; position:absolute; bottom:20%; left:50%; transform:translateX(-50%);
+    width:3px; height:3px; border-radius:50%; background:rgba(10,10,12,0.42);
+  }
+  /* Seçili tarih — Süreç'teki "Randevu" bordo tonu */
+  button.rv-cell.rv-selected,
+  button.rv-cell.rv-selected:hover {
+    background:rgb(160,80,90);
+    color:#FAFAF8;
+  }
+  button.rv-cell.rv-selected.rv-today::after { background:rgba(250,250,248,0.65); }
+  button.rv-cell:focus { outline:none; }
+  button.rv-cell:focus-visible { outline:1px solid rgba(160,80,90,0.7); outline-offset:-2px; }
+
+  /* ── SAĞ: form ── */
+  .rv-right { min-width:0; display:flex; align-items:flex-start; }
+  .rv-form { width:100%; max-width:400px; padding-top:clamp(30px,5vh,64px); }
+
+  .rv-form-lead {
+    font-family:'Manrope',sans-serif; font-size:12px; font-weight:400;
+    color:rgba(28,28,30,0.55); line-height:1.8;
+    margin:0 0 clamp(18px,2.6vh,28px);
+    transition:opacity 0.55s ease, max-height 0.55s ease, margin 0.55s ease;
+    max-height:60px;
+  }
+  /* Tarih seçilince "Önce bir tarih seçin" kaybolur */
+  #randevu.rv-picked .rv-form-lead { opacity:0; max-height:0; margin:0; pointer-events:none; }
+
+  .rv-field { margin-bottom:clamp(15px,2.2vh,25px); }
+  .rv-label {
+    display:block;
+    font-family:'Cinzel',serif; font-size:8px; font-weight:600;
+    letter-spacing:0.28em; text-transform:uppercase;
+    color:rgba(10,10,12,0.42);
+    margin-bottom:8px;
+  }
+  .rv-input {
+    width:100%; box-sizing:border-box;
+    background:transparent; border:none;
+    border-bottom:1px solid rgba(10,10,12,0.13);
+    padding:9px 0;
+    font-family:'Manrope',sans-serif; font-size:14px; font-weight:400;
+    color:#0A0A0A;
+    border-radius:0;
+    transition:border-color 0.45s ease;
+  }
+  .rv-input:focus { outline:none; border-bottom-color:rgba(160,80,90,0.75); }
+
+  .rv-submit {
+    display:inline-flex; align-items:center;
+    background:none; border:none; padding:0; margin-top:clamp(6px,1.2vh,14px);
+    cursor:pointer;
+  }
+  .rv-submit-lb {
+    position:relative; padding-bottom:8px;
+    font-family:'Cinzel',serif; font-size:11px; font-weight:600;
+    letter-spacing:0.11em; text-transform:uppercase; color:#0A0A0A;
+    transition:letter-spacing 0.5s ease;
+  }
+  .rv-submit-lb::after {
+    content:''; position:absolute; bottom:0; left:0; width:100%; height:1px;
+    background:linear-gradient(90deg, rgba(10,10,12,.55), rgba(10,10,12,.06));
+    opacity:.45; transition:opacity .5s ease, background .5s ease;
+  }
+  .rv-submit:hover .rv-submit-lb { letter-spacing:0.16em; }
+  .rv-submit:hover .rv-submit-lb::after {
+    opacity:1; background:linear-gradient(90deg, rgba(160,80,90,.95), rgba(160,80,90,.10));
+  }
+  .rv-note {
+    font-family:'Manrope',sans-serif; font-size:10.5px;
+    color:rgba(28,28,30,0.42); line-height:1.8;
+    margin:clamp(14px,2.2vh,24px) 0 0;
+  }
+
+  /* ── Alanlar SADECE tarih seçilince gelir ── */
+  .rv-f1,.rv-f2,.rv-f3,.rv-f4 {
+    opacity:0; transform:translateY(16px); pointer-events:none;
+    transition:opacity 0.85s cubic-bezier(0.4,0,0.25,1),
+               transform 0.95s cubic-bezier(0.4,0,0.25,1);
+  }
+  #randevu.rv-picked .rv-f1,
+  #randevu.rv-picked .rv-f2,
+  #randevu.rv-picked .rv-f3,
+  #randevu.rv-picked .rv-f4 { opacity:1; transform:none; pointer-events:auto; }
+  #randevu.rv-picked .rv-f1 { transition-delay:0.10s; }
+  #randevu.rv-picked .rv-f2 { transition-delay:0.22s; }
+  #randevu.rv-picked .rv-f3 { transition-delay:0.34s; }
+  #randevu.rv-picked .rv-f4 { transition-delay:0.46s; }
+
+  /* ── Slide giriş animasyonu ── */
+  .rv-head, .rv-cal, .rv-form-lead {
+    opacity:0; transform:translateY(20px);
+  }
+  #randevu.rv-in .rv-head,
+  #randevu.rv-in .rv-cal,
+  #randevu.rv-in .rv-form-lead {
+    opacity:1; transform:translateY(0);
+    transition:opacity 0.9s cubic-bezier(0.4,0,0.25,1),
+               transform 1.0s cubic-bezier(0.4,0,0.25,1);
+  }
+  #randevu.rv-in .rv-head { transition-delay:0.04s; }
+  #randevu.rv-in .rv-cal  { transition-delay:0.12s; }
+  #randevu.rv-in .rv-form-lead { transition-delay:0.20s; }
+  /* Adım/seçim kuralları giriş kurallarını devralır */
+  #randevu.rv-in.rv-step-1 .rv-head {
+    transform:translateY(-26px); opacity:0; max-height:0; margin-bottom:0;
+  }
+  #randevu.rv-in.rv-picked .rv-form-lead { opacity:0; max-height:0; margin:0; }
+
+  /* ── Aşağı kaydırma oku ── */
+  .rv-down {
+    position:absolute; bottom:clamp(14px,2.2vh,26px); left:50%;
+    transform:translateX(-50%);
+    z-index:6; cursor:pointer; padding:8px 26px;
+  }
+  .rv-down-ico { animation:gbl-bounce 2.3s ease-in-out infinite; }
+  .rv-down svg path { transition:stroke .35s ease; }
+  .rv-down:hover svg path { stroke:rgba(10,10,12,0.8); }
+  .rv-down:focus { outline:none; }
+  .rv-down:focus-visible { outline:1px solid rgba(10,10,12,0.32); outline-offset:3px; }
+
+  /* ── Mobil ── */
+  @media (max-width:900px) {
+    .rv-wrap {
+      grid-template-columns:1fr;
+      gap:clamp(18px,2.6vh,28px);
+      padding-left:24px; padding-right:24px;
+      overflow-y:auto;
+    }
+    .rv-cell { aspect-ratio:1/0.66; }
+    #randevu.rv-step-1 .rv-head,
+    #randevu.rv-in.rv-step-1 .rv-head { transform:none; opacity:1; max-height:140px; margin-bottom:16px; }
+    .rv-form { padding-top:0; }
+  }
+</style>
+
+<script>
+(function() {
+  var RV_IDX = 4;
+  var MONTHS = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+  var DAYS   = ['Pt','Sa','Ça','Pe','Cu','Ct','Pa'];
+
+  var view = new Date(); view.setDate(1); view.setHours(0,0,0,0);
+  var today = new Date(); today.setHours(0,0,0,0);
+  var selected = null;
+  var step = 0;
+
+  function pad(n){ return n<10 ? '0'+n : ''+n; }
+  function fmt(d){ return pad(d.getDate())+'.'+pad(d.getMonth()+1)+'.'+d.getFullYear(); }
+  function sec(){ return document.getElementById('randevu'); }
+
+  function render() {
+    var grid = document.getElementById('rv-grid');
+    var lbl  = document.getElementById('rv-month');
+    if (!grid || !lbl) return;
+    lbl.textContent = MONTHS[view.getMonth()] + ' ' + view.getFullYear();
+
+    var html = '';
+    DAYS.forEach(function(d){ html += '<div class="rv-cell rv-head-cell">'+d+'</div>'; });
+
+    var first = new Date(view.getFullYear(), view.getMonth(), 1);
+    var lead  = (first.getDay() + 6) % 7;              /* Pazartesi = 0 */
+    var total = new Date(view.getFullYear(), view.getMonth()+1, 0).getDate();
+
+    for (var i = 0; i < lead; i++) html += '<div class="rv-cell"></div>';
+
+    for (var day = 1; day <= total; day++) {
+      var d = new Date(view.getFullYear(), view.getMonth(), day);
+      var isPast = d < today;
+      var cls = 'rv-cell';
+      if (isPast) cls += ' rv-past';
+      if (d.getTime() === today.getTime()) cls += ' rv-today';
+      if (selected && d.getTime() === selected.getTime()) cls += ' rv-selected';
+      if (isPast) {
+        html += '<div class="'+cls+'">'+day+'</div>';
+      } else {
+        html += '<button type="button" class="'+cls+'" data-d="'+d.getTime()+'">'+day+'</button>';
+      }
+    }
+    var used = lead + total;
+    var tail = (7 - (used % 7)) % 7;
+    for (var t = 0; t < tail; t++) html += '<div class="rv-cell"></div>';
+
+    grid.innerHTML = html;
+
+    /* Her hücreye doğrudan listener — delegasyona bağımlı kalma */
+    Array.prototype.forEach.call(grid.querySelectorAll('button.rv-cell'), function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault(); e.stopPropagation();
+        pick(new Date(parseInt(btn.dataset.d, 10)));
+      });
+    });
+
+    var prev = document.getElementById('rv-prev');
+    if (prev) prev.disabled = (view.getFullYear() === today.getFullYear() && view.getMonth() === today.getMonth());
+  }
+
+  function pick(d) {
+    selected = d;
+    window._rvSelectedDate = fmt(d);
+    var el = sec();
+    if (el) { el.classList.add('rv-picked'); el.classList.add('rv-step-1'); el.classList.remove('rv-step-0'); step = 1; }
+    render();
+  }
+
+  function setStep(n) {
+    var el = sec(); if (!el) return;
+    step = n;
+    el.classList.toggle('rv-step-1', n === 1);
+    el.classList.toggle('rv-step-0', n === 0);
+  }
+
+  function bind() {
+    var grid = document.getElementById('rv-grid');
+    if (!grid) { setTimeout(bind, 150); return; }
+
+    /* Yedek: doğrudan listener bir sebeple düşerse pointerdown yakalar */
+    var root = document.getElementById('randevu');
+    if (root && !root._rvDelegated) {
+      root._rvDelegated = true;
+      root.addEventListener('pointerdown', function(e) {
+        var t = e.target;
+        while (t && t !== root && !(t.dataset && t.dataset.d)) t = t.parentNode;
+        if (t && t.dataset && t.dataset.d) {
+          e.preventDefault(); e.stopPropagation();
+          pick(new Date(parseInt(t.dataset.d, 10)));
+        }
+      });
+    }
+
+    var prev = document.getElementById('rv-prev');
+    var next = document.getElementById('rv-next');
+    if (prev) prev.addEventListener('click', function(e){ e.stopPropagation(); view.setMonth(view.getMonth()-1); render(); });
+    if (next) next.addEventListener('click', function(e){ e.stopPropagation(); view.setMonth(view.getMonth()+1); render(); });
+
+    var down = document.getElementById('rv-down');
+    if (down) {
+      down.addEventListener('click', function(){ if (window._rvStepNav) window._rvStepNav(1); });
+      down.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (window._rvStepNav) window._rvStepNav(1); }
+      });
+    }
+    render();
+  }
+
+  function initSlide() {
+    if (!window.pageSwiper) { setTimeout(initSlide, 120); return; }
+
+    function applyActive(i) {
+      var el = sec(); if (!el) return;
+      if (i === RV_IDX) el.classList.add('rv-in');
+      else { el.classList.remove('rv-in'); setStep(0); }
+    }
+    window.pageSwiper.on('slideChangeTransitionEnd', function(){ applyActive(this.activeIndex); });
+    applyActive(window.pageSwiper.activeIndex);
+
+    /* Adımlı kaydırma: 0 → 1 → sonraki slide */
+    var lock = false;
+    function unlock(){ setTimeout(function(){ lock = false; }, 640); }
+
+    function stepNav(dir) {
+      if (lock) return;
+      lock = true;
+      if (dir > 0) {
+        if (step === 0) { setStep(1); unlock(); return; }
+        if (window._gotoSlide) window._gotoSlide(RV_IDX + 1);
+      } else {
+        if (step === 1) { setStep(0); unlock(); return; }
+        if (window._gotoSlide) window._gotoSlide(RV_IDX - 1);
+      }
+      unlock();
+    }
+    window._rvStepNav = stepNav;
+
+    var acc = 0, accT = null;
+    function norm(e){ var d=e.deltaY; if(e.deltaMode===1)d*=16; else if(e.deltaMode===2)d*=(window.innerHeight||800); return d; }
+
+    var el = document.getElementById('slide-randevu');
+    if (!el) return;
+
+    el.addEventListener('wheel', function(e) {
+      if (!window.pageSwiper || window.pageSwiper.activeIndex !== RV_IDX) return;
+      if (window.innerWidth <= 900) return;
+      e.preventDefault(); e.stopPropagation();
+      if (lock) return;
+      clearTimeout(accT);
+      acc += norm(e);
+      if (Math.abs(acc) >= 38) { var d = acc; acc = 0; stepNav(d); return; }
+      accT = setTimeout(function(){ acc = 0; }, 110);
+    }, { passive:false });
+
+    var ty = 0, fired = false;
+    el.addEventListener('touchstart', function(e){ ty = e.touches[0].clientY; fired = false; }, { passive:true });
+    el.addEventListener('touchmove', function(e) {
+      if (fired) return;
+      if (!window.pageSwiper || window.pageSwiper.activeIndex !== RV_IDX) return;
+      if (window.innerWidth <= 900) return;
+      var d = ty - e.touches[0].clientY;
+      if (Math.abs(d) > 34) { fired = true; stepNav(d); }
+    }, { passive:true });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ bind(); initSlide(); });
+  else { bind(); initSlide(); }
+})();
+</script>
+</div><!-- /slide randevu -->
+
+<!-- ═══════════════════════════════════════════════════════
+     HAKKIMIZDA SLIDE — Manifesto & Footer · Slide index: 5
+════════════════════════════════════════════════════════ -->
+<div class="swiper-slide slide-fullscreen" id="slide-hakkimizda">
+<section id="hakkimizda" style="position:absolute;inset:0;background:#FAFAF8;overflow-y:auto;overflow-x:hidden;">
+
+  <div class="hk-wrap">
+
+    <!-- ═══ SOL: Kurumsal navigasyon sütunları ═══ -->
+    <aside class="hk-aside hka hk1">
+
+      <div class="hk-aside-links">
+
+        <div class="hk-col">
+          <p class="hk-col-title">Müşteri Hizmetleri</p>
+          <a class="hk-link" href="#randevu" onclick="if(window.pageSwiper){event.preventDefault();window._gotoSlide?window._gotoSlide(4):window.pageSwiper.slideTo(4);}">Randevu Al</a>
+          <a class="hk-link" href="#sss" onclick="if(window.pageSwiper){event.preventDefault();window.pageSwiper.slideTo(6);}">Sıkça Sorulan Sorular</a>
+          <a class="hk-link" href="/cdn-cgi/l/email-protection#482a21242f21082a21242d2b2d2421662b2725"><span class="__cf_email__" data-cfemail="0a6863666d634a6863666f696f666324696567">[email&#160;protected]</span></a>
+          <a class="hk-link" href="tel:+905000000000">+90 500 000 00 00</a>
+          <a class="hk-link" data-whatsapp href="#">WhatsApp Destek</a>
+        </div>
+
+        <div class="hk-col">
+          <p class="hk-col-title">Atölye</p>
+          <a class="hk-link" href="#koleksiyon" onclick="if(window.pageSwiper){event.preventDefault();window.pageSwiper.slideTo(1);}">Koleksiyonlar</a>
+          <a class="hk-link" href="#gelinlerimiz" onclick="if(window.pageSwiper){event.preventDefault();window.pageSwiper.slideTo(2);}">Gelinlerimiz</a>
+          <a class="hk-link" href="#surec" onclick="if(window.pageSwiper){event.preventDefault();window.pageSwiper.slideTo(3);}">Atölye Süreci</a>
+          <a class="hk-link" href="/blog">Blog</a>
+          <a class="hk-link" href="/kariyer">Kariyer</a>
+        </div>
+
+        <div class="hk-col">
+          <p class="hk-col-title">Kurumsal</p>
+          <a class="hk-link" href="/gizlilik">Gizlilik Politikası</a>
+          <a class="hk-link" href="/kvkk">KVKK</a>
+          <a class="hk-link" href="/cerez">Çerez Politikası</a>
+        </div>
+
+        <div class="hk-col">
+          <p class="hk-col-title">Takip Edin</p>
+          <a class="hk-link" href="https://instagram.com/bileceli.bridal" target="_blank" rel="noopener">Instagram</a>
+          <a class="hk-link" href="https://tiktok.com/@bileceli" target="_blank" rel="noopener">TikTok</a>
+          <a class="hk-link" href="https://youtube.com/@bileceli" target="_blank" rel="noopener">YouTube</a>
+          <a class="hk-link" data-whatsapp href="#">WhatsApp</a>
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- ═══ SAĞ: Manifesto ═══ -->
+    <div class="hk-manifesto">
+
+      <div>
+        <h2 class="hka hk2 hk-mtitle">Bir An İçin.</h2>
+        <div class="hka hk3 hk-mrule"></div>
+
+        <p class="hka hk4 hk-mtext">
+          Tek bir gece için değil, ömür boyu hatırlanacak bir an için tasarlıyoruz.
+          İzmir'deki atölyemizde her gelinlik; bir hayalin, size özgü zarafetin ve unutulmaz
+          bir hatıranın couture bir yansıması olarak hayat bulur.
+          Çünkü her kadın benzersizdir. Bu yüzden her parça, onun hikâyesini taşıyan
+          tek ve eşsiz bir imza olarak şekillenir.
+          Detaylara verdiğimiz özen, yüksek işçiliğimiz ve kişiye özel yaklaşımımızla
+          yalnızca bir gelinlik değil; hayatınızın en anlamlı gününe eşlik edecek zamansız bir parça yaratıyoruz.
+          Sizinle birlikte her adımda aynı titizlik ve incelikle ilerliyor, hayalinizdeki gelinliği gerçeğe dönüştürüyoruz.
+          Ortaya çıkan şey ise yalnızca bir tasarım değil; yıllar sonra bile aynı duyguyu yaşatacak bir hatıra oluyor.
+        </p>
+      </div>
+
+      <p class="hka hk5 hk-copy">© 2025 Sone Moda. Tüm hakları saklıdır.</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+  #slide-hakkimizda { background:#FAFAF8 !important; }
+  #slide-hakkimizda section#hakkimizda { opacity:1 !important; transform:none !important; }
+
+  .hk-wrap {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: clamp(240px,30vw,380px) 1fr;
+    padding-top: var(--nav-h,68px);
+    box-sizing: border-box;
+  }
+
+  .hk-aside {
+    padding: clamp(40px,6vh,72px) clamp(28px,3.5vw,48px) clamp(32px,4vh,48px) clamp(40px,5.5vw,80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(28,28,30,0.07);
+    box-sizing: border-box;
+  }
+  .hk-aside-links {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px,3.5vh,40px);
+  }
+  .hk-col { display:flex; flex-direction:column; }
+  .hk-col-title {
+    font-family: 'Cinzel', serif;
+    font-size: 7.5px;
+    font-weight: 600;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: rgba(28,28,30,0.35);
+    margin: 0 0 12px;
+  }
+  .hk-link {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(11px,0.80vw,12.5px);
+    font-weight: 400;
+    color: rgba(28,28,30,0.68);
+    text-decoration: none;
+    line-height: 1;
+    padding: 5.5px 0;
+    display: block;
+    letter-spacing: 0.01em;
+    transition: color 0.22s ease;
+  }
+  .hk-link:hover { color: #0A0A0A; }
+
+  .hk-manifesto {
+    padding: clamp(40px,6vh,72px) clamp(48px,6vw,100px) clamp(36px,5vh,56px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    min-height: calc(100dvh - var(--nav-h,68px));
+  }
+
+  /* ══ Manifesto başlığı — Playfair Display ══ */
+  .hk-mtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem,1.4vw,1.7rem);
+    font-weight: 700;
+    font-style: normal;
+    color: rgba(10,10,12,0.72);
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+  .hk-mrule {
+    width: 0; height: 1px;
+    background: linear-gradient(90deg, rgba(28,28,30,0.15) 0%, transparent 100%);
+    margin: clamp(14px,2vh,20px) 0 clamp(18px,2.8vh,28px);
+    transition: width 1s cubic-bezier(.25,.46,.45,.94) .22s;
+  }
+  body.on-hakkimizda .hk-mrule { width: 48px; }
+
+  .hk-mtext {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(12.5px,0.95vw,15px);
+    font-weight: 400;
+    color: rgba(10,10,12,0.68);
+    line-height: 1.92;
+    letter-spacing: 0.01em;
+    margin: 0;
+    max-width: 72ch;
+  }
+
+  .hk-copy {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(28,28,30,0.25);
+    letter-spacing: 0.04em;
+    margin: clamp(24px,3.5vh,40px) 0 0;
+  }
+
+  /* ══ Animasyon ══ */
+  .hka {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .65s cubic-bezier(.25,.46,.45,.94), transform .65s cubic-bezier(.25,.46,.45,.94);
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+  }
+  body.on-hakkimizda .hka { opacity:1; transform:none; }
+  body.on-hakkimizda .hk1 { transition-delay:.06s; }
+  body.on-hakkimizda .hk2 { transition-delay:.14s; }
+  body.on-hakkimizda .hk3 { transition-delay:.22s; }
+  body.on-hakkimizda .hk4 { transition-delay:.32s; }
+  body.on-hakkimizda .hk5 { transition-delay:.46s; }
+  body:not(.on-hakkimizda) .hka { opacity:0 !important; transform:translateY(12px) !important; transition:none !important; }
+
+  /* ══ Navbar — sadece logo ══ */
+  body.on-hakkimizda #nav-left,
+  body.on-hakkimizda #nav-right { opacity:0 !important; pointer-events:none !important; transition:opacity 0.35s ease !important; }
+  body:not(.on-hakkimizda) #nav-left,
+  body:not(.on-hakkimizda) #nav-right { transition:opacity 0.35s ease !important; }
+
+  body.on-hakkimizda header#main-nav::before {
+    background: rgba(250,250,248,0.97) !important;
+    backdrop-filter: blur(20px) saturate(1.1) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(1.1) !important;
+  }
+  body.on-hakkimizda header#main-nav { box-shadow: 0 1px 0 rgba(28,28,30,.06) !important; }
+  body.on-hakkimizda header#main-nav .logo-text    { color: #000000 !important; }
+  body.on-hakkimizda header#main-nav .logo-divider { color: rgba(0,0,0,.28) !important; }
+  body.on-hakkimizda header#main-nav .logo-subtext { color: rgba(0,0,0,.62) !important; text-shadow:none !important; letter-spacing:0.24em !important; font-weight:800 !important; }
+
+  body.on-hakkimizda .cpag-bullet       { background: rgba(28,28,30,0.22) !important; }
+  body.on-hakkimizda .cpag-bullet:hover { background: rgba(28,28,30,0.55) !important; }
+  body.on-hakkimizda .cpag-bullet.active{ background: rgba(28,28,30,0.80) !important; }
+
+  #slide-hakkimizda, #slide-hakkimizda * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (max-width:860px) {
+    .hk-wrap { grid-template-columns:1fr; }
+    .hk-aside { border-right:none; border-bottom:1px solid rgba(28,28,30,0.07); flex-direction:row; flex-wrap:wrap; gap:20px 36px; padding:28px 24px; }
+    .hk-manifesto { padding:28px 24px 36px; min-height:auto; }
+    .hk-mtext { max-width:100%; }
+  }
+</style>
+</div><!-- /slide hakkimizda -->
+
+
+
+
+</div><!-- /swiper-wrapper --><div class="swiper-pagination" style="right:20px;left:auto;width:auto;"></div></div><!-- /page-swiper -->
+
+<!-- ══ ÖZEL SAĞ PAGİNASYON ══ -->
+<nav id="custom-pagination" aria-label="Sayfa navigasyonu">
+  <!-- JS tarafından doldurulur -->
+</nav>
+
+<style>
+  /* Swiper'ın kendi pagination'ını gizle — bizimkini kullanıyoruz */
+  .swiper-pagination { display: none !important; }
+
+  /* ══ Özel sağ dikey pagination — sade bullet'lar ══ */
+  #custom-pagination {
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cpag-bullet {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.38);
+    cursor: pointer;
+    transition:
+      background 0.4s ease,
+      height 0.35s ease,
+      border-radius 0.35s ease;
+    flex-shrink: 0;
+  }
+  .cpag-bullet:hover { background: rgba(255,255,255,0.72); }
+  .cpag-bullet.active {
+    background: rgba(255,255,255,0.95);
+    height: 14px;
+    border-radius: 2px;
+  }
+
+  /* Koyu slide renk uyumu */
+  body.on-collection .cpag-bullet,
+  body.scrolled:not(.on-collection) .cpag-bullet {
+    background: rgba(28,28,30,0.22);
+  }
+  body.on-collection .cpag-bullet:hover,
+  body.scrolled:not(.on-collection) .cpag-bullet:hover {
+    background: rgba(28,28,30,0.55);
+  }
+  body.on-collection .cpag-bullet.active,
+  body.scrolled:not(.on-collection) .cpag-bullet.active {
+    background: rgba(28,28,30,0.80);
+  }
+
+  /* Mobile gizle */
+  @media (max-width: 767px) { #custom-pagination { display: none; } }
+</style>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+(function() {
+  // YSL-style vertical creative Swiper — v13 refined
+  const swiper = new Swiper('.page-swiper', {
+    direction: 'vertical',
+    speed: 650,
+    allowTouchMove: false,          /* mouse drag kapalı — sadece scroll/keyboard */
+    touchStartPreventDefault: false,
+    effect: 'creative',
+    creativeEffect: {
+      limitProgress: 1,
+      shadowPerProgress: false,
+      progressMultiplier: 1,
+      perspective: true,
+      prev: {
+        translate: [0, 0, -1],
+        rotate: [0, 0, 0],
+        opacity: 1,
+        scale: 1
+      },
+      next: {
+        translate: [0, '100%', 0],
+        rotate: [0, 0, 0],
+        opacity: 1,
+        scale: 1
+      }
+    },
+    mousewheel: {
+      enabled: false
+    },
+    keyboard: {
+      enabled: false
+    },
+    cssMode: false,
+    resistance: false,
+    cssEase: 'cubic-bezier(0.77, 0, 0.175, 1)',
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'bullets'
+    },
+    on: {
+      /* Geçiş BAŞLARKEN */
+      slideChange: function() {
+        const nav = document.getElementById('main-nav');
+        if (nav) {
+          nav.classList.add('nav-transitioning');
+          /* FLASH KAYNAĞI: fare geçiş sırasında navbar üstünde duruyorsa
+             .nav-hovered beyaz plakayı boyuyor → "önce beyaz oldu, sonra
+             saydama döndü" görüntüsü. Geçişte hover'ı düşür; kullanıcı
+             fareyi gerçekten hareket ettirince mouseenter yeniden ekler. */
+          nav.classList.remove('nav-hovered');
+        }
+        /* Koleksiyon slide sınıfı — gelinlerimiz'e gidince on-collection'ı hemen kaldırma,
+           initGelinSlide on-gelinlerimiz ile atomik olarak değiştirsin */
+        const leavingCollectionToHero = (this.previousIndex === 1 && this.activeIndex === 0);
+        if (this.activeIndex !== 2 && !leavingCollectionToHero) {
+          document.body.classList.toggle('on-collection', this.activeIndex === 1);
+        }
+        /* Hero sınıfı — navbar hover saydam kalır.
+           Koleksiyon→Hero: sınıfları HEMEN değiştirirsek navbar hâlâ beyaz
+           koleksiyon zemini üzerindeyken beyaz temaya atlar → flash.
+           Bu yüzden hero ekranı büyük ölçüde kapladıktan sonra (geçişin
+           ~%55'i) değiştir; renkler 0.6s cross-fade ile yumuşak oturur. */
+        if (leavingCollectionToHero) {
+          /* Plaka _gotoSlide içinde ANINDA düşürüldü. Burada sadece yazı
+             renklerini hero temasına yumuşakça çevir. */
+          clearTimeout(window._heroThemeTimer);
+          window._heroThemeTimer = setTimeout(function() {
+            document.body.classList.remove('on-collection');
+            document.body.classList.add('on-hero');
+            if (typeof setStickyNav === 'function') setStickyNav(0);
+          }, 180);
+        } else {
+          document.body.classList.toggle('on-hero', this.activeIndex === 0);
+        }
+        /* Hakkımızda — beyaz zemin, koyu navbar (on-collection ile aynı zamanlama) */
+        document.body.classList.toggle('on-randevu', this.activeIndex === 4);
+        const goingToHakkimizda = this.activeIndex === 5;
+        const leavingHakkimizda = this.previousIndex === 5;
+        if (goingToHakkimizda) {
+          document.body.classList.add('on-hakkimizda');
+          /* on-surec'i burada da temizle — iki listener arasında çakışma olmasın */
+          document.body.classList.remove('on-surec');
+        } else if (leavingHakkimizda) {
+          document.body.classList.remove('on-hakkimizda');
+        }
+        if (this.activeIndex === 0 && !leavingCollectionToHero && typeof setStickyNav === 'function') {
+          setStickyNav(0);
+        }
+        /* Pagination güncelle */
+        if (typeof updateCustomPagination === 'function') updateCustomPagination(this.activeIndex, 0);
+        /* Koleksiyon slide'ına geçerken kol-visible tetikle */
+        const activeSlide = this.slides[this.activeIndex];
+        if (activeSlide) {
+          const kolSection = activeSlide.querySelector('#koleksiyon');
+          if (kolSection) kolSection.classList.add('kol-visible');
+        }
+      },
+      /* Geçiş BİTİNCE navbar rengini güncelle */
+      slideChangeTransitionEnd: function() {
+        const nav = document.getElementById('main-nav');
+        if (nav) nav.classList.remove('nav-transitioning');
+        /* GÜVENLİK AĞI: hızlı ardışık kaydırmalarda gelinlerimiz'in
+           reveal timer'ı temizlenip navbar görünmez kalabiliyordu. */
+        if (this.activeIndex !== 2 && document.body.classList.contains('on-gelinlerimiz')) {
+          clearTimeout(window._navSafety);
+          window._navSafety = setTimeout(function() {
+            if (window.pageSwiper && window.pageSwiper.activeIndex !== 2) {
+              document.body.classList.remove('on-gelinlerimiz');
+            }
+          }, 260);
+        }
+        /* on-collection: gelinlerimiz'e geliyorsa zaten kaldırıldı, dokunma */
+        if (this.activeIndex !== 2) {
+          document.body.classList.toggle('on-collection', this.activeIndex === 1);
+        }
+        document.body.classList.toggle('on-hero', this.activeIndex === 0);
+        document.body.classList.toggle('on-hakkimizda', this.activeIndex === 5);
+        document.body.classList.toggle('on-randevu', this.activeIndex === 4);
+        if (this.activeIndex > 0 && typeof setStickyNav === 'function') {
+          setStickyNav(this.activeIndex);
+        }
+        /* FLASH FIX: geçiş tamamen bittikten sonra col-swiper'ı sıfırla
+           Artık kullanıcı görmez çünkü slide zaten arkada */
+        if (this.previousIndex === 1 && this.activeIndex !== 1 && window.colSwiper) {
+          window.colSwiper.slideTo(0, 0);
+        }
+        if (typeof updatePageProgress === 'function') updatePageProgress(this.activeIndex, window.colSwiper ? window.colSwiper.activeIndex : 0);
+        if (typeof updateCustomPagination === 'function') updateCustomPagination(this.activeIndex, window.colSwiper ? window.colSwiper.activeIndex : 0);
+      }
+    }
+  });
+  window.pageSwiper = swiper;
+
+  /* ══════════════════════════════════════════════════════════
+     _gotoSlide — TEK giriş noktası.
+     Gelinlerimiz'e (2) girerken önce navbar elementlerini
+     animasyonla söndürür, animasyon bitmeye yakın sayfayı kaydırır.
+     Böylece "navbar dururken sayfa kayıyor" flash'ı ortadan kalkar.
+  ══════════════════════════════════════════════════════════ */
+  /* Beyaz plakalı slide'lar — bunlardan koyu bir slide'a geçerken
+     plaka ANINDA (transition'sız) kalkmalı, yoksa ekran oturduktan
+     sonra beyazlık bir süre daha durup fade oluyor = flash. */
+  var WHITE_PLATE = { 1:1, 4:1, 5:1 };
+
+  function killPlateInstantly() {
+    var nav = document.getElementById('main-nav');
+    if (!nav) return;
+    nav.classList.remove('nav-hovered');
+    nav.classList.add('nav-no-plate', 'nav-plate-instant');
+    /* transition'sız uygulandıktan sonra instant'ı kaldır ki
+       sonraki geçişler yine yumuşak olsun */
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() { nav.classList.remove('nav-plate-instant'); });
+    });
+    clearTimeout(window._platePurgeTimer);
+    window._platePurgeTimer = setTimeout(function() {
+      nav.classList.remove('nav-no-plate');
+    }, 1400);
+  }
+
+  window._gotoSlide = function(target) {
+    if (!swiper) return;
+    target = Math.max(0, Math.min(swiper.slides.length - 1, target));
+    var from = swiper.activeIndex;
+    if (target === from) return;
+
+    var forward = target > from;
+    var body = document.body;
+
+    /* Beyaz plaka → koyu slide: kaydırma başlamadan plakayı düşür.
+       İSTİSNA — Gelinlerimiz (2): navbar zaten tek parça fade-out yapıyor,
+       plakayı anında öldürmek transition'ları tek kare kapatıp gizlenmeyi
+       sert bir "snap"e çeviriyordu. Plaka header opacity'siyle birlikte
+       yumuşakça silinsin. */
+    if (WHITE_PLATE[from] && !WHITE_PLATE[target] && target !== 2) killPlateInstantly();
+
+    /* Navbar önce kaybolur, sonra sayfa kayar. Süreç'ten gelirken
+       sönmenin tamamlandığı hissi için biraz daha uzun bekleriz. */
+    var PREFADE = (from === 3 && target === 2) ? 460 : 260;
+
+    if (target === 2 && from !== 2) {
+      if (window._pageSwiperLock) window._pageSwiperLock();
+      /* Navbar sayfa ile AYNI yöne kaysın: ileri → yukarı, geri → aşağı */
+      body.setAttribute('data-dir', forward ? 'fwd' : 'back');
+      body.setAttribute('data-nav-hide', forward ? 'up' : 'down');
+      body.classList.add('on-gelinlerimiz');
+      /* Süreç'ten (yukarıdan) iniyorsak logo transferi devreye girsin */
+      clearTimeout(window._preFadeTimer);
+      window._preFadeTimer = setTimeout(function() { swiper.slideTo(2); }, PREFADE);
+      return;
+    }
+
+    /* Yön bayrağı — tüm slide'lar giriş sırasını buna göre kurar */
+    body.setAttribute('data-dir', forward ? 'fwd' : 'back');
+    /* Navbar HER ZAMAN hafifçe aşağıdan yukarı süzülerek yerine oturur */
+    window._navShowDir = 'down';
+    window._navFwd = forward;
+
+    if (window._pageSwiperLock) window._pageSwiperLock();
+    /* Koleksiyona geçerken onun kendi motoru da kilitlensin — yoksa aynı
+       hareketin artık ivmesi hemen slidePrev tetikleyip hero'ya atlıyor. */
+    if (target === 1 && window._kLockNow) window._kLockNow();
+    swiper.slideTo(target);
+  };
+
+  /* Koleksiyon sayfa-seviyesi giriş/çıkış koreografisi */
+  (function collectionPageMotion() {
+    var el = document.getElementById('slide-koleksiyon');
+    if (!el) return;
+    function apply(i, prev) {
+      var forward = (typeof prev === 'number') ? (i > prev) : true;
+      if (i === 1) {
+        el.classList.remove('kol-pg-out-up', 'kol-pg-out-down');
+        el.classList.add('kol-pg-in');
+      } else if (prev === 1) {
+        el.classList.remove('kol-pg-in');
+        el.classList.add(forward ? 'kol-pg-out-up' : 'kol-pg-out-down');
+      }
+    }
+    swiper.on('slideChange', function() { apply(this.activeIndex, this.previousIndex); });
+    swiper.on('slideChangeTransitionEnd', function() {
+      if (this.activeIndex !== 1) el.classList.remove('kol-pg-out-up', 'kol-pg-out-down');
+      else { el.classList.remove('kol-pg-out-up','kol-pg-out-down'); el.classList.add('kol-pg-in'); }
+    });
+    apply(swiper.activeIndex);
+  })();
+
+  /* Navbar'ı kontrollü yönden geri getir */
+  window._revealNav = function(dir) {
+    var body = document.body, nav = document.getElementById('main-nav');
+    /* dir='above' → navbar yukarıdan aşağı süzülerek yerine oturur
+       (Gelinlerimiz → Koleksiyon dönüşü). Aksi halde aşağıdan yükselir.
+       Gizli haldeki konumu tek karelik "transition kapalı" ile uygulayıp
+       sonra sınıfı kaldırıyoruz → deterministik "yerine oturma" hissi. */
+    body.classList.remove('nav-reveal-below', 'nav-reveal-above');
+    body.classList.add(dir === 'above' ? 'nav-reveal-above' : 'nav-reveal-below');
+    if (nav) nav.classList.add('nav-plate-instant');
+    /* Reflow'u ZORLA: +18px konumu transition'sız anında uygulansın.
+       (İki ayrı rAF kullanılırsa arada transition tetiklenip navbar
+        yukarıdan aşağı kayıyordu — ters hareket bundan kaynaklanıyordu.) */
+    if (nav) void nav.offsetHeight;
+    requestAnimationFrame(function() {
+      /* Aynı karede: transition'ı aç VE gizleme sınıfını kaldır */
+      if (nav) nav.classList.remove('nav-plate-instant');
+      body.classList.remove('on-gelinlerimiz');
+      clearTimeout(window._revealCleanup);
+      window._revealCleanup = setTimeout(function() {
+        body.classList.remove('nav-reveal-below', 'nav-reveal-above');
+      }, 1200);
+    });
+  };
+
+  /* ══════════════════════════════════════════════════════════
+     PERFORMANS — görünmeyen medyayı durdur
+     Arka planda oynayan video = sürekli decode + GPU compositing
+     = pil ve CPU tüketimi. Sadece AKTİF slide'daki video oynar.
+  ══════════════════════════════════════════════════════════ */
+  (function mediaPowerSaver() {
+    /* Kurallar:
+       • HERO videosu  : slide 0 ve 1'de oynar, Gelinlerimiz'e (2) gelince durur.
+                         (Koleksiyon'da açık kalır ki yukarı/aşağı gidip gelirken
+                          kullanıcının gözüne takılan bir kesinti olmasın.)
+       • SÜREÇ videosu : SADECE Süreç slide'ına (3) gelindiğinde başlar.
+                         Gelinlerimiz'deyken (2) kendiliğinden başlamaz.
+                         Koleksiyon'a (≤1) inilene kadar durmaz. */
+    function play(v) { if (v && v.paused) { var p = v.play(); if (p && p.catch) p.catch(function(){}); } }
+    function pause(v) { if (v && !v.paused) v.pause(); }
+
+    function apply(i) {
+      var hero  = document.getElementById('hero-video');
+      var surec = document.getElementById('surec-video');
+
+      if (i <= 1) play(hero); else pause(hero);
+
+      if (i === 3) play(surec);
+      else if (i <= 1) pause(surec);
+      /* i === 2 veya 4 → dokunma: başlatma da durdurma da yok */
+
+      /* Koleksiyon GIF'leri uzaktayken compositing dışına alınır */
+      var kol = document.getElementById('slide-koleksiyon');
+      if (kol) kol.style.visibility = (i <= 2) ? '' : 'hidden';
+    }
+
+    swiper.on('slideChangeTransitionEnd', function() { apply(this.activeIndex); });
+    apply(swiper.activeIndex);
+
+    /* Sekme arka plana alınınca her şeyi durdur */
+    document.addEventListener('visibilitychange', function() {
+      var hero  = document.getElementById('hero-video');
+      var surec = document.getElementById('surec-video');
+      if (document.hidden) { pause(hero); pause(surec); }
+      else { apply(window.pageSwiper ? window.pageSwiper.activeIndex : 0); }
+    });
+  })();
+
+  /* ══════════════════════════════════════════════════════════
+     PREMIUM SCROLL ENGINE v2 — inertia-aware, auto-extending lock
+     
+     Trackpad problemi: tek bir swipe 2-3 saniye boyunca
+     azalan deltaY değerleriyle wheel eventi göndermeye devam eder.
+     
+     Çözüm:
+     1. Yüksek intent eşiği (120px) — küçük kazara scroll'lar sayılmaz
+     2. Geçiş tetiklenince HARD_LOCK ms blokla (minimum süre)
+     3. Wheel eventi geldiği SÜRECE lock'u otomatik uzat (EXTEND ms)
+        Eventler durununca EXTEND ms sonra lock açılır
+     4. Bu yüzden inertia devam ettiği sürece bir sonraki slide'a geçemez
+  ══════════════════════════════════════════════════════════ */
+  (function() {
+    var INTENT_THRESHOLD = 38;   /* px — normalize edilmiş delta; hemen tepki verir */
+    var HARD_LOCK        = 820;  /* ms — slide hızı (650) + küçük tampon */
+    var EXTEND           = 380;  /* ms — son wheel eventinden sonra ne kadar daha bekle */
+    var ACCUM_RESET      = 110;  /* ms — wheel durununca accumulator sıfırla */
+
+    /* Cihaz farkı düzeltmesi: Firefox satır (deltaMode 1) veya sayfa (2)
+       birimi gönderir. Normalize edilmezse eşik dolmaz → scroll "tekler". */
+    function normDelta(e) {
+      var d = e.deltaY;
+      if (e.deltaMode === 1) d *= 16;                       /* satır → px */
+      else if (e.deltaMode === 2) d *= (window.innerHeight || 800); /* sayfa → px */
+      return d;
+    }
+
+    var _acc         = 0;
+    var _locked      = false;
+    var _hardTimer   = null;  /* minimum lock süresi */
+    var _extTimer    = null;  /* inertia uzatma */
+    var _accumTimer  = null;
+    var _hardDone    = false; /* minimum süre doldu mu */
+
+    function lock() {
+      _locked   = true;
+      _hardDone = false;
+      _acc      = 0;
+      clearTimeout(_hardTimer);
+      clearTimeout(_extTimer);
+      /* Minimum süre — ne olursa olsun bu kadar bekle */
+      _hardTimer = setTimeout(function() {
+        _hardDone = true;
+        /* Eğer wheel eventi hâlâ geliyorsa _extTimer açık olacak,
+           o bitince unlock tetiklenir. Gelmiyorsa hemen aç. */
+        tryUnlock();
+      }, HARD_LOCK);
+    }
+
+    function extendLock() {
+      /* Wheel eventi gelince extend timer'ı sıfırla */
+      clearTimeout(_extTimer);
+      _extTimer = setTimeout(function() { tryUnlock(); }, EXTEND);
+    }
+
+    function tryUnlock() {
+      /* Sadece hem hard lock bitti hem de extend timer doldu mu */
+      if (!_hardDone) return;
+      _locked = false;
+      _acc    = 0;
+    }
+
+    /* Geçiş başlayınca kilitle */
+    swiper.on('slideChange', function() { lock(); });
+    /* Geçiş bitince extend timer'ı (yeniden) başlat */
+    swiper.on('slideChangeTransitionEnd', function() {
+      _hardDone = true; /* transition bitti = hard lock şartı tamam */
+      extendLock();     /* ama inertia hâlâ geliyorsa bekle */
+    });
+
+    function navigate(dir) {
+      if (_locked) return;
+      var target = swiper.activeIndex + (dir > 0 ? 1 : -1);
+      if (window._gotoSlide) { window._gotoSlide(target); return; }
+      lock();
+      if (dir > 0) swiper.slideNext();
+      else         swiper.slidePrev();
+    }
+
+    /* ── Global wheel handler ── */
+    window.addEventListener('wheel', function(e) {
+      if (!window.pageSwiper) return;
+      var idx = window.pageSwiper.activeIndex;
+      if (idx === 1) return; /* koleksiyon kendi handler'ı */
+      if (idx === 4 && window.innerWidth > 900) return; /* randevu kendi adımlı handler'ı */
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (_locked) {
+        /* Kilitliyken gelen her event extend timer'ı sıfırlar */
+        extendLock();
+        return;
+      }
+
+      /* Accumulator */
+      clearTimeout(_accumTimer);
+      _acc += normDelta(e);
+
+      if (Math.abs(_acc) >= INTENT_THRESHOLD) {
+        navigate(_acc);
+        return;
+      }
+
+      _accumTimer = setTimeout(function() { _acc = 0; }, ACCUM_RESET);
+
+    }, { passive: false, capture: true });
+
+    /* ── Keyboard ── */
+    document.addEventListener('keydown', function(e) {
+      if (!window.pageSwiper) return;
+      if (window.pageSwiper.activeIndex === 1) return;
+      if (window.pageSwiper.activeIndex === 4 && window.innerWidth > 900) {
+        if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); if (window._rvStepNav) window._rvStepNav(1); return; }
+        if (e.key === 'ArrowUp'   || e.key === 'PageUp')   { e.preventDefault(); if (window._rvStepNav) window._rvStepNav(-1); return; }
+        return;
+      }
+      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault(); navigate(1);
+      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault(); navigate(-1);
+      }
+    });
+
+    /* ── Dokunmatik (mobil / tablet) ──
+       touchend'i beklemez: parmak eşiği geçtiği AN animasyon başlar. */
+    (function() {
+      var startY = 0, fired = false, active = false;
+      var TOUCH_THRESHOLD = 34; /* px */
+
+      document.addEventListener('touchstart', function(e) {
+        if (!window.pageSwiper) return;
+        if (window.pageSwiper.activeIndex === 1) return; /* koleksiyon kendi handler'ı */
+        if (window.pageSwiper.activeIndex === 4 && window.innerWidth > 900) return; /* randevu kendi handler'ı */
+        if (e.touches.length !== 1) { active = false; return; }
+        startY = e.touches[0].clientY;
+        fired  = false;
+        active = true;
+      }, { passive: true });
+
+      document.addEventListener('touchmove', function(e) {
+        if (!active || fired) return;
+        if (!window.pageSwiper || window.pageSwiper.activeIndex === 1) return;
+        if (window.pageSwiper.activeIndex === 4 && window.innerWidth > 900) return;
+        var d = startY - e.touches[0].clientY;
+        if (Math.abs(d) >= TOUCH_THRESHOLD) {
+          fired = true;
+          navigate(d);
+        }
+      }, { passive: true });
+
+      document.addEventListener('touchend', function() { active = false; }, { passive: true });
+    })();
+
+    window._pageSwiperLock   = function() { lock(); };
+    window._pageSwiperUnlock = function() { tryUnlock(); };
+  })();
+
+  // Swiper'ı kesinlikle slide 0'da başlat
+  swiper.slideTo(0, 0);
+  // İlk slide nav durumu — scrolled class'ı temizle + on-hero başlat
+  document.body.classList.remove('scrolled');
+  document.body.classList.add('on-hero');
+  if (typeof setStickyNav === 'function') setStickyNav(0);
+
+  /* ══ ÖZEL SAĞ PAGİNASYON — sade bullet'lar ══ */
+  (function buildPagination() {
+    const nav = document.getElementById('custom-pagination');
+    if (!nav) return;
+
+    const slides = [
+      { idx: 0, label: 'Anasayfa' },
+      { idx: 1, label: 'Koleksiyonlar' },
+      { idx: 2, label: 'Gelinlerimiz' },
+      { idx: 3, label: 'Süreç' },
+      { idx: 4, label: 'Randevu' },
+      { idx: 5, label: 'Hakkımızda' },
+    ];
+
+    nav.innerHTML = slides.map(function(s) {
+      return '<div class="cpag-bullet" data-page="' + s.idx + '" title="' + s.label + '"></div>';
+    }).join('');
+
+    nav.querySelectorAll('.cpag-bullet').forEach(function(el) {
+      el.addEventListener('click', function() {
+        if (window.pageSwiper) window.pageSwiper.slideTo(parseInt(this.dataset.page));
+      });
+    });
+
+    window.updateCustomPagination = function(pageIdx) {
+      nav.querySelectorAll('.cpag-bullet').forEach(function(el) {
+        el.classList.toggle('active', parseInt(el.dataset.page) === pageIdx);
+      });
+    };
+    window.updateCustomPagination(0);
+  })();
+
+  // İlk render için on-hero ekle
+  document.body.classList.add('on-hero');
+
+  requestAnimationFrame(() => {
+    if (typeof updateCustomPagination === 'function') updateCustomPagination(0, 0);
+  });
+})();
+</script>
+
+<style>
+  /* swiper pagination — custom #custom-pagination kullanıyoruz, Swiper kendi pagination'ı gizli */
+
+  /* ══ Swiper Creative Transition — overflow fix ══ */
+  .page-swiper {
+    overflow: hidden !important;
+  }
+  .swiper-slide {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* ══ Non-fullscreen slides — iç scroll için ══ */
+  .page-swiper .swiper-slide:not(.slide-fullscreen) {
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Scrollbar gizle ama çalışsın */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .page-swiper .swiper-slide:not(.slide-fullscreen)::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ══ Navbar geçiş sırasında daha smooth ══ */
+  header#main-nav {
+    transition: box-shadow 0.6s ease !important;
+  }
+
+  /* ══ Koleksiyon slide — koyu tema (v8 CSS'i override eder) ══ */
+  /* #slide-koleksiyon bg v8 style bloğunda ayarlanıyor */
+</style>
+
+<style id="pagination-styles">
+  /* Swiper kendi pagination'ını gizle — bizim custom-pagination kullanılıyor */
+</style>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVBAR FLASH-FIX — YSL tarzı: dikey slide geçişi boyunca
+     navbar SAYDAM & nötr kalır, geçiş bitince yumuşakça oturur.
+     (En sonda tanımlı → cascade'de kazanır.)
+════════════════════════════════════════════════════════════ -->
+<style id="nav-flash-fix">
+  /* 1) Geçiş sırasında beyaz plaka ANİDEN belirmesin — saydam kalsın.
+        Böylece navbar "bağımsız bir bant gibi flash" yapmaz; içerik
+        yukarı kayarken navbar üstte sakin durur, sonra plaka fade olur. */
+  body header#main-nav.nav-transitioning::before {
+    background: rgba(255,255,255,0) !important;
+    backdrop-filter: blur(0px) saturate(1) !important;
+    -webkit-backdrop-filter: blur(0px) saturate(1) !important;
+    transition:
+      background 0.6s cubic-bezier(0.25,0.46,0.45,0.94),
+      backdrop-filter 0.6s ease,
+      -webkit-backdrop-filter 0.6s ease !important;
+  }
+  /* Geçişte gölge de olmasın (plakayla birlikte flash kaynağı) */
+  /* DİKKAT: opacity listede kalmalı — sadece box-shadow bırakılırsa
+     Gelinlerimiz giriş/çıkışındaki navbar fade'i tek karede kesilip
+     sert bir kaybolma/belirme oluşuyordu. */
+  body header#main-nav.nav-transitioning {
+    box-shadow: none !important;
+    transition: box-shadow 0.6s ease,
+                opacity 0.7s cubic-bezier(0.4,0,0.25,1) !important;
+  }
+  body:not(.on-gelinlerimiz) header#main-nav.nav-transitioning {
+    transition: box-shadow 0.6s ease,
+                opacity 0.85s cubic-bezier(0.4,0,0.25,1) !important;
+  }
+  /* 2) Yazı/logo/CTA renkleri SNAP yapmasın — 0.6s yumuşak cross-fade
+        (slide hızı ~650ms ile eşleşir) */
+  header#main-nav.nav-transitioning .nav-item,
+  header#main-nav.nav-transitioning .logo-text,
+  header#main-nav.nav-transitioning .logo-divider,
+  header#main-nav.nav-transitioning .logo-subtext,
+  header#main-nav.nav-transitioning .menu-btn,
+  header#main-nav.nav-transitioning .nav-cta .nav-cta-inner {
+    transition:
+      color 0.6s cubic-bezier(0.25,0.46,0.45,0.94),
+      opacity 0.6s cubic-bezier(0.25,0.46,0.45,0.94),
+      border-color 0.6s ease,
+      text-shadow 0.6s ease !important;
+  }
+</style>
+
+<!-- ═══════════════════════════════════════════════════════════
+     UI/UX REVİZE — okunabilirlik + elegance (YSL referansı)
+════════════════════════════════════════════════════════════ -->
+<style id="ui-polish">
+  /* ── 1) Koleksiyon başlıkları altındaki altın çizgiler kaldırıldı ── */
+  #slide-koleksiyon .krule { display: none !important; }
+  /* Çizgi gidince boşluk kaybolmasın — ritmi koru */
+  #slide-koleksiyon .kdsc { margin-top: clamp(26px,3.8vh,46px) !important; }
+
+  /* ── 2) "Koleksiyonu Keşfet" — sönüklüğü giderildi ──
+        Büyütüldü, kontrast arttı, dinlenme halinde ince bir alt çizgi
+        ile "tıklanabilir" olduğu okunuyor. Ağırlık elegant kalıyor. */
+  #slide-koleksiyon .kcta-lb {
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    /* Harf arası daraltıldı — "flu / dağınık" görünüm gitti, tek kelime
+       öbeği gibi okunuyor */
+    letter-spacing: 0.11em !important;
+    color: #0A0A0A !important;
+    padding-bottom: 8px !important;
+  }
+  #slide-koleksiyon .kcta-lb::after {
+    background: linear-gradient(90deg, rgba(10,10,12,.55), rgba(10,10,12,.06)) !important;
+    transform: scaleX(1) !important;
+    opacity: .45;
+    transition: opacity .5s ease, background .5s ease !important;
+  }
+  #slide-koleksiyon .kcta:hover .kcta-lb::after {
+    opacity: 1;
+    background: linear-gradient(90deg, rgba(201,162,39,.95), rgba(201,162,39,.10)) !important;
+  }
+  #slide-koleksiyon .kcta:hover .kcta-lb { letter-spacing: 0.16em !important; }
+
+  /* ── Kart metin bloğu biraz yukarı — başlıklar çok alttan başlıyordu ── */
+  #slide-koleksiyon .ktext {
+    margin-bottom: clamp(34px,7vh,86px) !important;
+  }
+  #slide-koleksiyon .kttl { margin-top: 0 !important; }
+  #slide-koleksiyon .kdsc { margin-top: clamp(18px,2.6vh,32px) !important; }
+  #slide-koleksiyon .kcta { margin-top: clamp(24px,3.4vh,40px) !important; }
+  @media (max-width:767px) {
+    #slide-koleksiyon .ktext { margin-bottom: 0 !important; }
+  }
+
+  /* "Tüm Koleksiyonları Keşfet" de biraz belirginleşsin */
+  #slide-koleksiyon .kall {
+    font-size: 11px !important;
+    color: rgba(10,10,12,.86) !important;
+    letter-spacing: .2em !important;
+  }
+  #slide-koleksiyon .kall:hover { color: #0A0A0A !important; }
+
+  /* Açıklama metni biraz daha okunur */
+  #slide-koleksiyon .kdsc { color: rgba(28,28,30,.82) !important; }
+
+  /* ── 3) NAVBAR — daha okunur ama ince/elegant (kalınlaştırılmadı) ──
+        Boyut 9px → 10px, letter-spacing biraz sıkıldı, opaklık arttı. */
+  header#main-nav .nav-item {
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.185em !important;
+  }
+  /* Koyu zeminlerde (hero / süreç) beyaz metin daha net */
+  body.on-hero header#main-nav .nav-item {
+    color: rgba(255,255,255,0.97) !important;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.45);
+  }
+  body.on-surec:not(.on-hakkimizda) header#main-nav .nav-item {
+    color: rgba(255,255,255,0.88) !important;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.5) !important;
+  }
+  /* Randevu Al butonu — altın biraz daha okunur */
+  body.on-surec:not(.on-hakkimizda) .nav-cta .nav-cta-inner {
+    color: rgba(212,175,55,0.92) !important;
+    border-color: rgba(212,175,55,0.52) !important;
+  }
+  body.on-hero header#main-nav .nav-cta .nav-cta-inner {
+    border-color: rgba(212,175,55,0.62) !important;
+  }
+
+  /* ── 4) Gelinlerimiz alt logosu — ok küçüldüğü için nefes aldı ── */
+  /* SONE MODA fotoğraf çerçevelerine binmesin — daha aşağıda dursun */
+  #gelin-bottom-logo { bottom: clamp(2px,0.5vh,7px) !important; }
+  /* Alt sis biraz güçlendi ki yazı fotoğraf üstünde net otursun */
+  #slide-gelinlerimiz .gelin-bottom-fade {
+    height: 27% !important;
+    background: linear-gradient(to top, rgba(244,239,234,0.94) 0%, rgba(244,239,234,0.55) 38%, transparent 100%) !important;
+  }
+  #gelin-bottom-chevron svg path { transition: stroke .35s ease; }
+  #gelin-bottom-chevron:hover svg path { stroke: rgba(10,10,12,0.8) !important; }
+
+  /* ══ NAVBAR PLAKASI TAMAMEN KALDIRILDI ══
+     Zeminler zaten beyaz/koyu; navbarda sadece yazılar var, arkası saydam.
+     Bu, koleksiyon→hero geçişindeki beyaz flash'ı kökten bitirir. */
+  html body header#main-nav::before,
+  html body header#main-nav.nav-hovered::before,
+  html body.on-collection header#main-nav::before,
+  html body.on-collection header#main-nav.nav-hovered::before,
+  html body.on-hakkimizda header#main-nav::before,
+  html body.on-randevu header#main-nav::before,
+  html body.scrolled header#main-nav::before {
+    background: rgba(255,255,255,0) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  html body header#main-nav,
+  html body.on-collection header#main-nav,
+  html body.on-hakkimizda header#main-nav,
+  html body.on-randevu header#main-nav,
+  html body.scrolled header#main-nav { box-shadow: none !important; }
+
+  /* ── nav-no-plate: geçiş boyunca navbar arkası KESİNLİKLE saydam ── */
+  html body header#main-nav.nav-no-plate::before,
+  html body header#main-nav.nav-no-plate.nav-hovered::before {
+    background: rgba(255,255,255,0) !important;
+    backdrop-filter: blur(0px) saturate(1) !important;
+    -webkit-backdrop-filter: blur(0px) saturate(1) !important;
+  }
+  html body header#main-nav.nav-no-plate { box-shadow: none !important; }
+
+  /* Geçiş sırasında hover beyaz plakası devre dışı (flash kaynağı) */
+  html body header#main-nav.nav-transitioning.nav-hovered::before {
+    background: rgba(255,255,255,0) !important;
+    backdrop-filter: blur(0px) saturate(1) !important;
+    -webkit-backdrop-filter: blur(0px) saturate(1) !important;
+  }
+
+  /* Gelinlerimiz'e girerken/çıkarken navbar elementleri de hafifçe kayar —
+     düz opacity yerine hareketli geçiş çok daha yumuşak okunuyor */
+  header#main-nav .nav-inner { will-change: transform, opacity; }
+  /* Navbar sayfa ile AYNI yöne kayar — ters hareket göz yormasın */
+  body.on-gelinlerimiz[data-nav-hide="up"]   header#main-nav .nav-inner { transform: translateY(-26px); }
+  body.on-gelinlerimiz[data-nav-hide="down"] header#main-nav .nav-inner { transform: translateY(18px); }
+  body.on-gelinlerimiz header#main-nav .nav-inner {
+    transition: transform 0.7s cubic-bezier(0.4,0,0.25,1) !important;
+  }
+  body:not(.on-gelinlerimiz) header#main-nav .nav-inner {
+    transform: translateY(0);
+    transition: transform 0.85s cubic-bezier(0.4,0,0.25,1) !important;
+  }
+  /* Giriş konumu — Süreç'e inişte aşağıdan yükselir,
+     Koleksiyon'a dönüşte yukarıdan süzülerek yerine oturur */
+  body.nav-reveal-below.on-gelinlerimiz header#main-nav .nav-inner {
+    transform: translateY(18px) !important;
+  }
+  body.nav-reveal-above.on-gelinlerimiz header#main-nav .nav-inner {
+    transform: translateY(-22px) !important;
+  }
+  /* Tek karelik "transition kapalı" durumu — kontrollü giriş için */
+  html body header#main-nav.nav-plate-instant,
+  html body header#main-nav.nav-plate-instant::before,
+  html body header#main-nav.nav-plate-instant .nav-inner,
+  html body.on-gelinlerimiz header#main-nav.nav-plate-instant .nav-inner,
+  html body.nav-reveal-below header#main-nav.nav-plate-instant .nav-inner,
+  html body.nav-reveal-above header#main-nav.nav-plate-instant .nav-inner {
+    transition: none !important;
+  }
+
+  /* ── RANDEVU slide navbar — zemin rengiyle aynı, yazılar siyah ── */
+  html body.on-randevu header#main-nav .nav-item     { color:#0A0A0A !important; opacity:1 !important; text-shadow:none !important; }
+  html body.on-randevu header#main-nav .logo-text    { color:#0A0A0A !important; }
+  html body.on-randevu header#main-nav .logo-divider { color:rgba(10,10,12,.34) !important; }
+  html body.on-randevu header#main-nav .logo-subtext { color:rgba(10,10,12,.72) !important; text-shadow:none !important; letter-spacing:0.24em !important; font-weight:800 !important; }
+  html body.on-randevu header#main-nav .menu-btn     { color:#0A0A0A !important; }
+  html body.on-randevu header#main-nav .nav-item:hover { opacity:.4 !important; }
+  html body.on-randevu .nav-cta .nav-cta-inner { color:#0A0A0A !important; border-color:rgba(10,10,12,.5) !important; }
+  body.on-randevu .cpag-bullet        { background:rgba(28,28,30,0.22) !important; }
+  body.on-randevu .cpag-bullet:hover  { background:rgba(28,28,30,0.55) !important; }
+  body.on-randevu .cpag-bullet.active { background:rgba(28,28,30,0.80) !important; }
+
+  /* ── HAKKIMIZDA (footer) navbar — beyaz zeminde beyaz yazı görünmüyordu ── */
+  html body.on-hakkimizda header#main-nav .nav-item { color:#0A0A0A !important; opacity:1 !important; text-shadow:none !important; }
+  html body.on-hakkimizda header#main-nav .menu-btn { color:#0A0A0A !important; }
+  html body.on-hakkimizda header#main-nav .nav-item:hover { opacity:.4 !important; }
+  html body.on-hakkimizda .nav-cta .nav-cta-inner { color:#0A0A0A !important; border-color:rgba(10,10,12,.5) !important; }
+
+  /* ══ KOLEKSİYON — sayfa seviyesi giriş/çıkış hareketi ══
+     .ka kurallarına dokunmadan sarmalayıcıları oynatıyoruz.
+     Giriş: her zaman AŞAĞIDAN yukarı oturur (navbar ile aynı his).
+     Çıkış: sayfa yönüne göre yukarı/aşağı süzülür. */
+  #slide-koleksiyon .ktext,
+  #slide-koleksiyon .kgif-area {
+    transition: transform 0.62s cubic-bezier(0.4,0,0.25,1),
+                opacity   0.5s  cubic-bezier(0.4,0,0.25,1);
+    will-change: transform, opacity;
+  }
+  /* Hazır bekleme durumu — aşağıda ve saydam */
+  #slide-koleksiyon:not(.kol-pg-in) .ktext,
+  #slide-koleksiyon:not(.kol-pg-in) .kgif-area {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  /* Çıkış — ileri giderken yukarı, geri giderken aşağı süzülür */
+  #slide-koleksiyon.kol-pg-out-up .ktext,
+  #slide-koleksiyon.kol-pg-out-up .kgif-area {
+    opacity: 0; transform: translateY(-34px);
+  }
+  #slide-koleksiyon.kol-pg-out-down .ktext,
+  #slide-koleksiyon.kol-pg-out-down .kgif-area {
+    opacity: 0; transform: translateY(34px);
+  }
+  /* Yerine oturmuş durum */
+  #slide-koleksiyon.kol-pg-in .ktext,
+  #slide-koleksiyon.kol-pg-in .kgif-area {
+    opacity: 1; transform: translateY(0);
+  }
+  /* SIRA — geri gelirken içerik önce (navbar en son),
+            ileri giderken navbar önce (içerik sonra) */
+  body[data-dir="back"] #slide-koleksiyon.kol-pg-in .ktext     { transition-delay: 0.02s; }
+  body[data-dir="back"] #slide-koleksiyon.kol-pg-in .kgif-area { transition-delay: 0.12s; }
+  body[data-dir="fwd"]  #slide-koleksiyon.kol-pg-in .ktext     { transition-delay: 0.26s; }
+  body[data-dir="fwd"]  #slide-koleksiyon.kol-pg-in .kgif-area { transition-delay: 0.36s; }
+  /* Çıkışta gecikme yok — hemen süzülsün */
+  #slide-koleksiyon.kol-pg-out-up .ktext,
+  #slide-koleksiyon.kol-pg-out-up .kgif-area,
+  #slide-koleksiyon.kol-pg-out-down .ktext,
+  #slide-koleksiyon.kol-pg-out-down .kgif-area { transition-delay: 0s !important; }
+
+  /* #sv-bottom'un transition shorthand'i delay'i sıfırlıyordu — sıralamayı geri ver.
+     Sıra (giriş): navbar → eyebrow → başlık → çizgi → timeline → Randevu */
+  #slide-surec.surec-visible #sv-bottom { transition-delay: 0.60s !important; }
+  #slide-surec:not(.surec-visible) #sv-bottom { transition-delay: 0s !important; }
+  /* Randevu bloğu tam ortada dursun */
+  #sv-bottom { left:0 !important; right:0 !important; width:100% !important; }
+
+  /* Gelinlerimiz'de logo tıklanamaz — burada "gizli navbar" görevi görüyor */
+  #gelin-logo-core { pointer-events: none; user-select: none; }
+
+  /* Navbar TEK PARÇA hareket eder — logo ve linkler eşit şekilde
+     birlikte kayıp silikleşir (logo önce kalkıyordu, kaldırıldı). */
+  header#main-nav #nav-logo-core { transform: none !important; transition: none !important; }
+
+  /* ══════════════════════════════════════════════════════
+     GLOBAL YÖN KURALI
+     • İLERİ (aşağıdaki sayfaya geçerken): elementler yukarıdan
+       aşağı kayarak yerlerine oturur.
+     • GERİ (üstteki sayfaya çıkarken): elementler aşağıdan
+       yukarı gelerek yerlerine oturur.
+     Çıkışta ise elementler sayfa ile AYNI yöne süzülerek silikleşir.
+  ══════════════════════════════════════════════════════ */
+
+  /* — SÜREÇ — */
+  body[data-dir="fwd"]  #slide-surec:not(.surec-visible) .sv-fi,
+  body[data-dir="fwd"]  #slide-surec:not(.surec-visible) #sv-bottom { transform: translateY(-16px); }
+  body[data-dir="back"] #slide-surec:not(.surec-visible) .sv-fi,
+  body[data-dir="back"] #slide-surec:not(.surec-visible) #sv-bottom { transform: translateY(16px); }
+
+  /* — KOLEKSİYON — */
+  body[data-dir="fwd"]  #slide-koleksiyon:not(.kol-pg-in) .ktext,
+  body[data-dir="fwd"]  #slide-koleksiyon:not(.kol-pg-in) .kgif-area { transform: translateY(-30px); }
+  body[data-dir="back"] #slide-koleksiyon:not(.kol-pg-in) .ktext,
+  body[data-dir="back"] #slide-koleksiyon:not(.kol-pg-in) .kgif-area { transform: translateY(30px); }
+
+  /* — GELİNLERİMİZ —
+     İleri gelirken (koleksiyondan): SONE MODA sayfanın altından yükselir,
+     yukarıda kaybolan navbar logosunun devamı gibi okunur.
+     Geri gelirken (süreçten): kısa bir mesafeden, silikleşerek yerine oturur —
+     tepeden düşme hareketi artık yok. */
+  body[data-dir="back"] #slide-gelinlerimiz:not(.gelin-visible) #gelin-bottom-logo {
+    transform: translateX(-50%) translateY(-34px);
+  }
+  body[data-dir="back"] #slide-gelinlerimiz:not(.gelin-visible) #gelin-title-block,
+  body[data-dir="back"] #slide-gelinlerimiz:not(.gelin-visible) #gelin-vsco-link {
+    transform: translateY(-22px);
+  }
+
+  /* Gelinlerimiz ÇIKIŞI — sayfa ile aynı yöne süzülüp silikleşir.
+     (Logo girişte özel olarak alttan geldiği için çıkış ayrı tanımlanır.) */
+  #slide-gelinlerimiz.gelin-out-up #gelin-bottom-logo {
+    transform: translateX(-50%) translateY(-36px) !important; opacity: 0 !important;
+    transition: opacity 0.5s cubic-bezier(0.4,0,0.25,1), transform 0.6s cubic-bezier(0.4,0,0.25,1) !important;
+  }
+  #slide-gelinlerimiz.gelin-out-down #gelin-bottom-logo {
+    transform: translateX(-50%) translateY(36px) !important; opacity: 0 !important;
+    transition: opacity 0.5s cubic-bezier(0.4,0,0.25,1), transform 0.6s cubic-bezier(0.4,0,0.25,1) !important;
+  }
+  #slide-gelinlerimiz.gelin-out-up #gelin-title-block,
+  #slide-gelinlerimiz.gelin-out-up #gelin-vsco-link {
+    transform: translateY(-24px) !important; opacity: 0 !important;
+    transition: opacity 0.45s cubic-bezier(0.4,0,0.25,1), transform 0.55s cubic-bezier(0.4,0,0.25,1) !important;
+  }
+  #slide-gelinlerimiz.gelin-out-down #gelin-title-block,
+  #slide-gelinlerimiz.gelin-out-down #gelin-vsco-link {
+    transform: translateY(24px) !important; opacity: 0 !important;
+    transition: opacity 0.45s cubic-bezier(0.4,0,0.25,1), transform 0.55s cubic-bezier(0.4,0,0.25,1) !important;
+  }
+
+  /* — RANDEVU — */
+  body[data-dir="fwd"]  #randevu:not(.rv-in) .rv-head,
+  body[data-dir="fwd"]  #randevu:not(.rv-in) .rv-cal,
+  body[data-dir="fwd"]  #randevu:not(.rv-in) .rv-form-lead { transform: translateY(-20px); }
+  body[data-dir="back"] #randevu:not(.rv-in) .rv-head,
+  body[data-dir="back"] #randevu:not(.rv-in) .rv-cal,
+  body[data-dir="back"] #randevu:not(.rv-in) .rv-form-lead { transform: translateY(20px); }
+
+  /* ── 5) Odak halkası — klavye için görünür, fare için değil ── */
+  #gelin-bottom-chevron:focus { outline: none; }
+  #gelin-bottom-chevron:focus-visible {
+    outline: 1px solid rgba(10,10,12,0.35);
+    outline-offset: 3px;
+  }
+</style>
+
+</body>
+</html>
