@@ -734,6 +734,10 @@
     qsa('section').forEach((section) => {
       if (section.id === 'koleksiyon') return;
       if (section.id === 'hakkimizda') return;
+      /* #randevu kendi rv-in giriş sistemine sahip — ikinci bir fade
+         katmanı çift animasyon/flash yapıyor ve observer tetiklenmezse
+         takvim görünmez kalıp tıklanamıyordu */
+      if (section.id === 'randevu') return;
       section.classList.add('scroll-fade-in');
       observer.observe(section);
     });
@@ -1903,11 +1907,11 @@
   }
 
   /* Navbar gizle — çok yavaş, kademeli silikleşme ══ */
-  /* Opaklık 0.55s — navbar logosu, gelinlerimiz'in büyük SONE MODA'sı
+  /* Opaklık 0.45s — navbar logosu, gelinlerimiz'in büyük SONE MODA'sı
      belirmeden önce tamamen kaybolur (çift logo çakışması olmasın) */
   body.on-gelinlerimiz header#main-nav {
     opacity:0 !important; pointer-events:none !important;
-    transition:opacity 0.55s cubic-bezier(0.4,0,0.25,1) !important;
+    transition:opacity 0.45s cubic-bezier(0.4,0,0.25,1) !important;
   }
   body:not(.on-gelinlerimiz) header#main-nav {
     opacity:1 !important; pointer-events:auto !important;
@@ -1975,7 +1979,7 @@
            GERİ (yukarı): elementler önce, navbar EN SON → uzun gecikme. */
         /* İLERİ (Süreç'e): önce SAYFA otursun (geçiş ~650ms), sonra navbar.
            GERİ (Koleksiyon'a): elementler önce, navbar en son. */
-        var revealAfter = (goingTo > 2) ? 660 : 520;
+        var revealAfter = (goingTo > 2) ? 480 : 520;
         /* Koleksiyon'a (yukarı) dönüşte navbar YUKARIDAN aşağı yerine
            oturur; Süreç'e (aşağı) inişte aşağıdan yükselir. */
         navbarTimer = setTimeout(function() {
@@ -2181,14 +2185,15 @@
   #sv-rule-wrap{ transition-delay:0.34s; }
   #sv-tl       { transition-delay:0.44s; }
   #sv-bottom   { transition-delay:0.60s; }
-  /* Çıkış sırası — alttan yukarı (ters), sıkı stagger + uzun süre:
+  /* Çıkış sırası — alttan yukarı (ters), çok sıkı stagger:
+     başlık dahil her şey sayfa kaymaya başlamadan silinmeye yaklaşır,
      elemanlar ani sönmek yerine sayfayla birlikte süzülerek kaybolur */
   #slide-surec:not(.surec-visible) #sv-bottom { transition-delay:0s; }
-  #slide-surec:not(.surec-visible) #sv-tl        { transition-delay:0.05s; }
-  #slide-surec:not(.surec-visible) #sv-rule-wrap { transition-delay:0.10s; }
-  #slide-surec:not(.surec-visible) #sv-title     { transition-delay:0.15s; }
-  #slide-surec:not(.surec-visible) #sv-eyebrow   { transition-delay:0.20s; }
-  #slide-surec:not(.surec-visible) .sv-fi { transition-duration:0.6s; }
+  #slide-surec:not(.surec-visible) #sv-tl        { transition-delay:0.04s; }
+  #slide-surec:not(.surec-visible) #sv-rule-wrap { transition-delay:0.07s; }
+  #slide-surec:not(.surec-visible) #sv-title     { transition-delay:0.09s; }
+  #slide-surec:not(.surec-visible) #sv-eyebrow   { transition-delay:0.12s; }
+  #slide-surec:not(.surec-visible) .sv-fi { transition-duration:0.55s; }
 
   #sv-cta { transition-delay:0s; }
   #slide-surec.surec-visible .sv-fi { opacity:1; transform:translateY(0); }
@@ -3075,18 +3080,37 @@
   function initSlide() {
     if (!window.pageSwiper) { setTimeout(initSlide, 120); return; }
 
-    function applyActive(i) {
-      var el = sec(); if (!el) return;
-      if (i === RV_IDX) el.classList.add('rv-in');
-      else { el.classList.remove('rv-in'); setStep(0); }
-    }
-    window.pageSwiper.on('slideChangeTransitionEnd', function(){ applyActive(this.activeIndex); });
-    applyActive(window.pageSwiper.activeIndex);
-
     /* Adım mekanizması kaldırıldı — kaydırma normal sayfa akışıyla
        doğrudan önceki/sonraki slide'a geçer, başlık hep görünür kalır. */
     var lock = false;
+    var graceTimer = null;
     function unlock(){ setTimeout(function(){ lock = false; }, 640); }
+
+    /* rv-in artık geçiş BAŞLARKEN eklenir (bitince değil) — içerik sayfa
+       ile birlikte süzülerek gelir, "boş ekran + sonradan pat diye
+       belirme" flash'ı kalmaz. rvActive guard'ı aynı durumun iki kez
+       tetiklenmesini (çifte animasyon) engeller. */
+    var rvActive = null;
+    function applyActive(i) {
+      var el = sec(); if (!el) return;
+      var a = (i === RV_IDX);
+      if (a === rvActive) return;
+      rvActive = a;
+      if (a) {
+        el.classList.add('rv-in');
+        /* Süreç'ten taşan wheel ivmesi kullanıcıyı anında footer'a
+           fırlatmasın — girişten sonra kısa bir kilit */
+        lock = true;
+        clearTimeout(graceTimer);
+        graceTimer = setTimeout(function(){ lock = false; }, 900);
+      } else {
+        el.classList.remove('rv-in');
+        setStep(0);
+      }
+    }
+    window.pageSwiper.on('slideChange', function(){ applyActive(this.activeIndex); });
+    window.pageSwiper.on('slideChangeTransitionEnd', function(){ applyActive(this.activeIndex); });
+    applyActive(window.pageSwiper.activeIndex);
 
     function stepNav(dir) {
       if (lock) return;
@@ -3106,7 +3130,13 @@
       if (!window.pageSwiper || window.pageSwiper.activeIndex !== RV_IDX) return;
       if (window.innerWidth <= 900) return;
       e.preventDefault(); e.stopPropagation();
-      if (lock) return;
+      if (lock) {
+        /* Kilitliyken gelen her olay (ivme kuyruğu) kilidi uzatır —
+           akış tamamen durmadan sayfa footer'a fırlamaz */
+        clearTimeout(graceTimer);
+        graceTimer = setTimeout(function(){ lock = false; }, 300);
+        return;
+      }
       clearTimeout(accT);
       acc += norm(e);
       if (Math.abs(acc) >= 38) { var d = acc; acc = 0; stepNav(d); return; }
@@ -3487,13 +3517,14 @@
            ~%55'i) değiştir; renkler 0.6s cross-fade ile yumuşak oturur. */
         if (leavingCollectionToHero) {
           /* Plaka _gotoSlide içinde ANINDA düşürüldü. Burada sadece yazı
-             renklerini hero temasına yumuşakça çevir. */
+             renklerini hero temasına yumuşakça çevir — hero zemini erken
+             göründüğü için beyaza dönüş de erken başlasın (80ms). */
           clearTimeout(window._heroThemeTimer);
           window._heroThemeTimer = setTimeout(function() {
             document.body.classList.remove('on-collection');
             document.body.classList.add('on-hero');
             if (typeof setStickyNav === 'function') setStickyNav(0);
-          }, 180);
+          }, 80);
         } else {
           document.body.classList.toggle('on-hero', this.activeIndex === 0);
         }
@@ -3992,7 +4023,7 @@
   body header#main-nav.nav-transitioning {
     box-shadow: none !important;
     transition: box-shadow 0.6s ease,
-                opacity 0.55s cubic-bezier(0.4,0,0.25,1) !important;
+                opacity 0.45s cubic-bezier(0.4,0,0.25,1) !important;
   }
   body:not(.on-gelinlerimiz) header#main-nav.nav-transitioning {
     transition: box-shadow 0.6s ease,
@@ -4283,9 +4314,11 @@
 
   /* Gelinlerimiz ÇIKIŞI — sayfa ile aynı yöne süzülüp silikleşir.
      (Logo girişte özel olarak alttan geldiği için çıkış ayrı tanımlanır.) */
+  /* Süreç'e inerken çıkış daha tez — elemanlar sayfa kaymaya başlarken
+     çoktan silinmiş olur, göz yormaz */
   #slide-gelinlerimiz.gelin-out-up #gelin-bottom-logo {
     transform: translateX(-50%) translateY(-36px) !important; opacity: 0 !important;
-    transition: opacity 0.5s cubic-bezier(0.4,0,0.25,1), transform 0.6s cubic-bezier(0.4,0,0.25,1) !important;
+    transition: opacity 0.38s cubic-bezier(0.4,0,0.25,1), transform 0.48s cubic-bezier(0.4,0,0.25,1) !important;
   }
   #slide-gelinlerimiz.gelin-out-down #gelin-bottom-logo {
     transform: translateX(-50%) translateY(36px) !important; opacity: 0 !important;
@@ -4294,7 +4327,7 @@
   #slide-gelinlerimiz.gelin-out-up #gelin-title-block,
   #slide-gelinlerimiz.gelin-out-up #gelin-vsco-link {
     transform: translateY(-24px) !important; opacity: 0 !important;
-    transition: opacity 0.45s cubic-bezier(0.4,0,0.25,1), transform 0.55s cubic-bezier(0.4,0,0.25,1) !important;
+    transition: opacity 0.3s cubic-bezier(0.4,0,0.25,1), transform 0.42s cubic-bezier(0.4,0,0.25,1) !important;
   }
   #slide-gelinlerimiz.gelin-out-down #gelin-title-block,
   #slide-gelinlerimiz.gelin-out-down #gelin-vsco-link {
