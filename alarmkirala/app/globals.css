@@ -156,6 +156,17 @@ body {
   color: var(--color-paper);
 }
 
+/* PDF teklif: yazdırmada gezinme öğeleri gizlenir, özet beyaz zeminde basılır */
+@media print {
+  .print-hide {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #0b0d10;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

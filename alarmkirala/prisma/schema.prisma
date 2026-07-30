@@ -1,0 +1,229 @@
+// alarmkirala.com veri modeli — brief FAZ 2 + §7 (kiralamaya özgü iş mantığı)
+//
+// Kurulum: npm i -D prisma tsx && npm i @prisma/client
+// Ardından: npx prisma migrate dev && npm run db:seed
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ── Katalog ─────────────────────────────────────────────────────────
+
+model Device {
+  id               String          @id @default(cuid())
+  slug             String          @unique
+  ad               String
+  kategori         String
+  kisaAciklama     String
+  uzunAciklama     String
+  teknikOzellikler String[]
+  gorseller        String[]
+  /// [[DOLDUR]] gerçek kira fiyatı
+  aylikKiraTL      Decimal         @db.Decimal(10, 2)
+  kurulumPuani     Int
+  hubUyumlulugu    String[]
+  disMekan         Boolean         @default(false)
+  oneCikan         Boolean         @default(false)
+  aktif            Boolean         @default(true)
+  kitItems         KitItem[]
+  inventoryUnits   InventoryUnit[]
+
+  @@index([kategori])
+}
+
+model Kit {
+  id            String    @id @default(cuid())
+  slug          String    @unique
+  ad            String
+  hedef         String
+  kapsam        String
+  aciklama      String
+  kurulumDakika Int
+  oneCikan      Boolean   @default(false)
+  teklifBazli   Boolean   @default(false)
+  items         KitItem[]
+}
+
+model KitItem {
+  id       String @id @default(cuid())
+  kit      Kit    @relation(fields: [kitId], references: [id], onDelete: Cascade)
+  kitId    String
+  device   Device @relation(fields: [deviceId], references: [id])
+  deviceId String
+  adet     Int
+
+  @@unique([kitId, deviceId])
+}
+
+// ── Müşteri & konfigürasyon ─────────────────────────────────────────
+
+model Customer {
+  id             String          @id @default(cuid())
+  ad             String
+  soyad          String
+  eposta         String          @unique
+  telefon        String          @unique
+  /// SMS OTP doğrulaması (Auth.js) — TR kullanıcısı için zorunlu
+  telefonDogru   Boolean         @default(false)
+  kvkkOnay       DateTime?
+  /// Görüntülü cihazlar için ayrı açık rıza (brief §7 KVKK)
+  videoRiza      DateTime?
+  configurations Configuration[]
+  subscriptions  Subscription[]
+  tickets        Ticket[]
+  createdAt      DateTime        @default(now())
+}
+
+/// Kit oluşturucu çıktısı: anonim taslak da olabilir (customerId null)
+model Configuration {
+  id           String        @id @default(cuid())
+  customer     Customer?     @relation(fields: [customerId], references: [id])
+  customerId   String?
+  /// Anonim taslak kurtarma e-postası
+  taslakEposta String?
+  /// ConfigInput + cihaz listesi JSON olarak
+  girdi        Json
+  cihazlar     Json
+  sureAy       Int
+  ekHizmetler  String[]
+  aylikToplam  Decimal       @db.Decimal(10, 2)
+  paylasilan   Boolean       @default(false)
+  subscription Subscription?
+  createdAt    DateTime      @default(now())
+}
+
+// ── Abonelik & sözleşme yaşam döngüsü (brief §7) ────────────────────
+
+enum SubscriptionStatus {
+  AKTIF
+  ASKIDA // ödeme başarısız: izleme kesilir, alarm çalışmaya devam eder
+  SONLANDI
+  IADE_BEKLIYOR
+  KAPANDI
+}
+
+model Subscription {
+  id              String             @id @default(cuid())
+  customer        Customer           @relation(fields: [customerId], references: [id])
+  customerId      String
+  configuration   Configuration      @relation(fields: [configurationId], references: [id])
+  configurationId String             @unique
+  status          SubscriptionStatus @default(AKTIF)
+  sureAy          Int
+  aylikTutarTL    Decimal            @db.Decimal(10, 2)
+  baslangic       DateTime
+  bitis           DateTime
+  /// Ödeme başarısızlık sayacı: 3 deneme → uyarı → askıya alma
+  odemeDenemesi   Int                @default(0)
+  contract        Contract?
+  installations   Installation[]
+  inventoryUnits  InventoryUnit[]
+  createdAt       DateTime           @default(now())
+}
+
+enum ContractStatus {
+  TASLAK
+  EIMZA_BEKLIYOR
+  AKTIF
+  ASKIDA
+  SONLANDI
+  IADE_BEKLIYOR
+  KAPANDI
+}
+
+model Contract {
+  id             String         @id @default(cuid())
+  subscription   Subscription   @relation(fields: [subscriptionId], references: [id])
+  subscriptionId String         @unique
+  status         ContractStatus @default(TASLAK)
+  /// [[DOLDUR]] e-imza sağlayıcısı referansı
+  eimzaRef       String?
+  adres          String
+  il             String
+  ilce           String
+  /// Erken çıkış: kalan ayların X%'i — [[DOLDUR]] oran
+  caymaOrani     Decimal?       @db.Decimal(5, 2)
+  imzaTarihi     DateTime?
+  createdAt      DateTime       @default(now())
+}
+
+// ── Envanter: seri numarası bazlı tekil cihaz takibi (brief §7) ─────
+
+enum UnitStatus {
+  DEPODA
+  MUSTERIDE
+  SERVISTE
+  HURDA
+}
+
+model InventoryUnit {
+  id             String        @id @default(cuid())
+  device         Device        @relation(fields: [deviceId], references: [id])
+  deviceId       String
+  seriNo         String        @unique
+  status         UnitStatus    @default(DEPODA)
+  subscription   Subscription? @relation(fields: [subscriptionId], references: [id])
+  subscriptionId String?
+  /// Cihaz yaşam döngüsü metrikleri
+  kiralanmaSayisi Int          @default(0)
+  sahadaAy        Int          @default(0)
+  garantiBitis   DateTime?
+  createdAt      DateTime      @default(now())
+
+  @@index([status])
+}
+
+// ── Kurulum & operasyon ─────────────────────────────────────────────
+
+enum InstallationType {
+  KURULUM
+  SOKUM
+  TASINMA_KESIF
+  SERVIS
+}
+
+enum InstallationStatus {
+  PLANLANDI
+  YOLDA
+  TAMAMLANDI
+  IPTAL
+}
+
+model Installation {
+  id             String             @id @default(cuid())
+  subscription   Subscription       @relation(fields: [subscriptionId], references: [id])
+  subscriptionId String
+  tip            InstallationType   @default(KURULUM)
+  status         InstallationStatus @default(PLANLANDI)
+  randevu        DateTime
+  teknisyen      String?
+  notlar         String?
+  createdAt      DateTime           @default(now())
+
+  @@index([randevu])
+}
+
+enum TicketStatus {
+  ACIK
+  ISLEMDE
+  COZULDU
+  KAPANDI
+}
+
+model Ticket {
+  id         String       @id @default(cuid())
+  customer   Customer     @relation(fields: [customerId], references: [id])
+  customerId String
+  konu       String
+  mesaj      String
+  status     TicketStatus @default(ACIK)
+  /// Taşınma talepleri de ticket akışından yürür (tip: "tasinma")
+  tip        String       @default("destek")
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+}
