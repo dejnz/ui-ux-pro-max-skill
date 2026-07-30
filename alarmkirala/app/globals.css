@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+/*
+  alarmkirala.com tasarım tokenları
+  Kaynak: Marka brief'i §3.4 — FireGuard kırmızı-koyu enerjisi,
+  güvenlik sektörüne kalibre edilmiş. Kırmızı yalnızca aksiyon ve
+  alarm durumu için; genel zemin koyu grafit.
+*/
+
+@theme {
+  /* Renk paleti */
+  --color-ink: #0b0d10;
+  --color-ink-soft: #14181d;
+  --color-ink-mute: #1b2027;
+  --color-signal: #e8371c;
+  --color-signal-dim: #b32612;
+  --color-amber: #ffb020;
+  --color-safe: #17b26a;
+  --color-paper: #f5f6f7;
+  --color-line: #262c33;
+  --color-fg: #f5f6f7;
+  --color-fg-soft: #b6bcc4;
+  --color-fg-mute: #7d858f;
+
+  /* Tipografi — next/font değişkenleri layout.tsx'te atanır */
+  --font-display: var(--font-archivo), "Archivo", system-ui, sans-serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
+
+  /* Aralık ölçeği */
+  --spacing: 0.25rem;
+
+  /* Yuvarlaklık — keskin, teknik dil */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.625rem;
+
+  /* Animasyon */
+  --ease-signal: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-pulse-dot: pulse-dot 2s var(--ease-signal) infinite;
+  --animate-rise: rise 0.6s var(--ease-signal) both;
+
+  @keyframes pulse-dot {
+    0% {
+      box-shadow: 0 0 0 0 rgb(23 178 106 / 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgb(23 178 106 / 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgb(23 178 106 / 0);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Başlık dili: kalın, sıkışık, hafif uppercase */
+.display {
+  font-family: var(--font-display);
+  font-stretch: 92%;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.display-soft {
+  font-family: var(--font-display);
+  font-stretch: 95%;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Sayı / veri dili */
+.numeric {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Diagonal kesim geçişler — ana görsel motif */
+.cut-b {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.5rem), 0 100%);
+}
+
+.cut-t {
+  clip-path: polygon(0 3.5rem, 100% 0, 100% 100%, 0 100%);
+}
+
+.cut-tb {
+  clip-path: polygon(0 3.5rem, 100% 0, 100% calc(100% - 3.5rem), 0 100%);
+}
+
+@media (max-width: 640px) {
+  .cut-b {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1.5rem), 0 100%);
+  }
+  .cut-t {
+    clip-path: polygon(0 1.5rem, 100% 0, 100% 100%, 0 100%);
+  }
+  .cut-tb {
+    clip-path: polygon(0 1.5rem, 100% 0, 100% calc(100% - 1.5rem), 0 100%);
+  }
+}
+
+/* İnce kırmızı çizgi vurgusu */
+.signal-rule {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.signal-rule::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 3px;
+  background: var(--color-signal);
+}
+
+/* Erişilebilirlik: klavye odak halkası her zaman görünür */
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-signal);
+  color: var(--color-paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
